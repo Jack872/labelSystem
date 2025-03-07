@@ -1,0 +1,1237 @@
+2024-06-25 10:02:20.966 [INFO ] [main] [c.e.l.LabelMarkApplication    ] Starting LabelMarkApplication using Java 18.0.2.1 on LAPTOP-00658OB5 with PID 27652 (F:\PG-project\labelMark\target\classes started by wanghua in F:\PG-project\labelMark)
+2024-06-25 10:02:20.971 [INFO ] [main] [c.e.l.LabelMarkApplication    ] The following 1 profile is active: "dev"
+2024-06-25 10:02:24.724 [INFO ] [main] [c.e.l.LabelMarkApplication    ] Started LabelMarkApplication in 4.17 seconds (JVM running for 5.69)
+2024-06-25 10:03:06.998 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (username = ?)
+2024-06-25 10:03:07.010 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.S.selectList          ] ==> Parameters: wh(String)
+2024-06-25 10:03:07.038 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.S.selectList          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:03:07.038 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.S.selectList          ] <==        Row: 1, wh, $2a$10$gceq7fafa4HhBCZBR56mpubV1XOOhFq3reEbDMZu1E.H67ZzqNRLS, 0, null, null
+2024-06-25 10:03:07.040 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.S.selectList          ] <==      Total: 1
+2024-06-25 10:03:07.120 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (username = ?)
+2024-06-25 10:03:07.121 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.S.selectList          ] ==> Parameters: wh(String)
+2024-06-25 10:03:07.121 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.S.selectList          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:03:07.121 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.S.selectList          ] <==        Row: 1, wh, $2a$10$gceq7fafa4HhBCZBR56mpubV1XOOhFq3reEbDMZu1E.H67ZzqNRLS, 0, null, null
+2024-06-25 10:03:07.121 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.S.selectList          ] <==      Total: 1
+2024-06-25 10:03:07.818 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (username = ?)
+2024-06-25 10:03:07.818 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] ==> Parameters: wh(String)
+2024-06-25 10:03:07.818 [TRACE] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:03:07.819 [TRACE] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] <==        Row: 1, wh, $2a$10$gceq7fafa4HhBCZBR56mpubV1XOOhFq3reEbDMZu1E.H67ZzqNRLS, 0, null, null
+2024-06-25 10:03:07.819 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] <==      Total: 1
+2024-06-25 10:03:08.235 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.TaskMapper.selectCount] ==>  Preparing: SELECT COUNT( * ) FROM task
+2024-06-25 10:03:08.235 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.TaskMapper.selectCount] ==> Parameters: 
+2024-06-25 10:03:08.252 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.TaskMapper.selectCount] <==    Columns: count
+2024-06-25 10:03:08.252 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.TaskMapper.selectCount] <==        Row: 1
+2024-06-25 10:03:08.254 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.TaskMapper.selectCount] <==      Total: 1
+2024-06-25 10:03:08.255 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.TaskMapper.getTaskInfo] ==>  Preparing: SELECT task_accepted.id, task_accepted.type_arr, sys_user.username AS username, sys_user.user_id AS userid, task.task_id, task.task_name, task.task_type, task.map_server, task.date_range, task.status, task.audit_feedback FROM task JOIN task_accepted ON task.task_id = task_accepted.task_id JOIN sys_user ON task_accepted.username = sys_user.username where sys_user.username=? ORDER BY task.status, task.task_id DESC
+2024-06-25 10:03:08.256 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.TaskMapper.getTaskInfo] ==> Parameters: wh(String)
+2024-06-25 10:03:08.259 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.TaskMapper.getTaskInfo] <==    Columns: id, type_arr, username, userid, task_id, task_name, task_type, map_server, date_range, status, audit_feedback
+2024-06-25 10:03:08.259 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 267, 3,1, wh, 1, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:03:08.260 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.TaskMapper.getTaskInfo] <==      Total: 1
+2024-06-25 10:03:08.264 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:03:08.267 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 3(Integer)
+2024-06-25 10:03:08.268 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:03:08.269 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.T.getTypeNameById     ] <==        Row: 飞机
+2024-06-25 10:03:08.269 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:03:08.270 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:03:08.270 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 3(Integer), 飞机(String), 5(Integer), 0(Integer)
+2024-06-25 10:03:08.271 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:03:08.271 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:03:08.271 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:03:08.271 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:03:08.272 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:03:08.272 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:03:08.272 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:03:08.272 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:03:08.272 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:03:08.273 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:03:08.273 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:03:08.273 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:03:08.273 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:03:08.279 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.MarkMapper.selectList ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE (task_id = ?)
+2024-06-25 10:03:08.279 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.MarkMapper.selectList ] ==> Parameters: null
+2024-06-25 10:03:08.281 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.MarkMapper.selectList ] <==      Total: 0
+2024-06-25 10:03:10.182 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.selectCount] ==>  Preparing: SELECT COUNT( * ) FROM task
+2024-06-25 10:03:10.183 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.selectCount] ==> Parameters: 
+2024-06-25 10:03:10.185 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.selectCount] <==    Columns: count
+2024-06-25 10:03:10.185 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.selectCount] <==        Row: 1
+2024-06-25 10:03:10.185 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.selectCount] <==      Total: 1
+2024-06-25 10:03:10.198 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.getTaskInfo] ==>  Preparing: SELECT task_accepted.id, task_accepted.type_arr, sys_user.username AS username, sys_user.user_id AS userid, task.task_id, task.task_name, task.task_type, task.map_server, task.date_range, task.status, task.audit_feedback FROM task JOIN task_accepted ON task.task_id = task_accepted.task_id JOIN sys_user ON task_accepted.username = sys_user.username where sys_user.username=? ORDER BY task.status, task.task_id DESC
+2024-06-25 10:03:10.198 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.getTaskInfo] ==> Parameters: wh(String)
+2024-06-25 10:03:10.200 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.getTaskInfo] <==    Columns: id, type_arr, username, userid, task_id, task_name, task_type, map_server, date_range, status, audit_feedback
+2024-06-25 10:03:10.200 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 267, 3,1, wh, 1, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:03:10.200 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.getTaskInfo] <==      Total: 1
+2024-06-25 10:03:10.200 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:03:10.200 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 3(Integer)
+2024-06-25 10:03:10.201 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:03:10.202 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==        Row: 飞机
+2024-06-25 10:03:10.202 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:03:10.203 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:03:10.204 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 3(Integer), 飞机(String), 5(Integer), 0(Integer)
+2024-06-25 10:03:10.205 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:03:10.205 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:03:10.206 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:03:10.206 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:03:10.206 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:03:10.207 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:03:10.207 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:03:10.208 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:03:10.209 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:03:10.210 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:03:10.211 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:03:10.211 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:03:10.211 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:03:10.214 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE (task_id = ?)
+2024-06-25 10:03:10.215 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] ==> Parameters: null
+2024-06-25 10:03:10.216 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] <==      Total: 0
+2024-06-25 10:03:11.931 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (username = ?)
+2024-06-25 10:03:11.931 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] ==> Parameters: wh(String)
+2024-06-25 10:03:11.932 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:03:11.932 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] <==        Row: 1, wh, $2a$10$gceq7fafa4HhBCZBR56mpubV1XOOhFq3reEbDMZu1E.H67ZzqNRLS, 0, null, null
+2024-06-25 10:03:11.932 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] <==      Total: 1
+2024-06-25 10:03:12.115 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:03:12.115 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 5(Integer), 0(Integer)
+2024-06-25 10:03:12.117 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:03:12.117 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:03:12.117 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:03:12.117 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 2
+2024-06-25 10:03:12.144 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.selectCount] ==>  Preparing: SELECT COUNT( * ) FROM task
+2024-06-25 10:03:12.144 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.selectCount] ==> Parameters: 
+2024-06-25 10:03:12.145 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.selectCount] <==    Columns: count
+2024-06-25 10:03:12.145 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.selectCount] <==        Row: 1
+2024-06-25 10:03:12.145 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.selectCount] <==      Total: 1
+2024-06-25 10:03:12.145 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.getTaskInfo] ==>  Preparing: SELECT task_accepted.id, task_accepted.type_arr, sys_user.username AS username, sys_user.user_id AS userid, task.task_id, task.task_name, task.task_type, task.map_server, task.date_range, task.status, task.audit_feedback FROM task JOIN task_accepted ON task.task_id = task_accepted.task_id JOIN sys_user ON task_accepted.username = sys_user.username ORDER BY task.status, task.task_id DESC
+2024-06-25 10:03:12.145 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.getTaskInfo] ==> Parameters: 
+2024-06-25 10:03:12.146 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.getTaskInfo] <==    Columns: id, type_arr, username, userid, task_id, task_name, task_type, map_server, date_range, status, audit_feedback
+2024-06-25 10:03:12.146 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 267, 3,1, wh, 1, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:03:12.147 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 269, 1, wh1, 2, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:03:12.147 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.getTaskInfo] <==      Total: 2
+2024-06-25 10:03:12.148 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:03:12.148 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 3(Integer)
+2024-06-25 10:03:12.149 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:03:12.149 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==        Row: 飞机
+2024-06-25 10:03:12.149 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:03:12.150 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:03:12.150 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 3(Integer), 飞机(String), 5(Integer), 0(Integer)
+2024-06-25 10:03:12.150 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:03:12.151 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:03:12.151 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:03:12.151 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:03:12.151 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:03:12.152 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:03:12.152 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:03:12.152 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:03:12.152 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:03:12.153 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:03:12.153 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:03:12.153 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:03:12.153 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:03:12.153 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:03:12.153 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:03:12.154 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:03:12.154 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:03:12.154 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:03:12.155 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:03:12.155 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:03:12.156 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:03:12.156 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:03:12.156 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:03:12.158 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.MarkMapper.selectList ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE (task_id = ?)
+2024-06-25 10:03:12.158 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.MarkMapper.selectList ] ==> Parameters: 95(Integer)
+2024-06-25 10:03:12.171 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.MarkMapper.selectList ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:03:12.171 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.MarkMapper.selectList ] <==        Row: 28, 95, 1, 1, 1.2714225595566096E7, 3603851.3375258516, 1.2714182121995324E7, 3603793.054288139, 1.2714259514490107E7, 3603740.5038311933, 1.2714326396889858E7, 3603803.086659036, 1.2714270024603365E7, 3603866.14718368, 1.2714225595566096E7, 3603851.3375258516, 0
+2024-06-25 10:03:12.172 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.MarkMapper.selectList ] <==        Row: 26, 95, 1, 3, 1.2714327830091428E7, 3603759.1353677716, 1.2714348730834058E7, 3603741.9967437247, 1.2714356807680117E7, 3603771.5257866345, 1.271436939271098E7, 3603772.034101716, 1.2714380858272512E7, 3603751.491654009, 1.2714390905565225E7, 3603734.920352433, 1.2714374647785833E7, 3603717.0949876355, 1.271432639688257E7, 3603703.7185113304, 1.2714327830091428E7, 3603759.1353677716, 0
+2024-06-25 10:03:12.172 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.MarkMapper.selectList ] <==        Row: 29, 95, 1, 3, 1.2714540062263196E7, 3603615.218760874, 1.2714508532010898E7, 3603596.109514738, 1.271451999757243E7, 3603535.915362253, 1.2714591179525862E7, 3603558.368724732, 1.2714540062263196E7, 3603615.218760874, 0
+2024-06-25 10:03:12.172 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.MarkMapper.selectList ] <==      Total: 3
+2024-06-25 10:04:08.031 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (username = ?)
+2024-06-25 10:04:08.031 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.S.selectList          ] ==> Parameters: wh(String)
+2024-06-25 10:04:08.032 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.S.selectList          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:04:08.032 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.S.selectList          ] <==        Row: 1, wh, $2a$10$gceq7fafa4HhBCZBR56mpubV1XOOhFq3reEbDMZu1E.H67ZzqNRLS, 0, null, null
+2024-06-25 10:04:08.032 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.S.selectList          ] <==      Total: 1
+2024-06-25 10:04:09.216 [DEBUG] [http-nio-1290-exec-5] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:04:09.217 [DEBUG] [http-nio-1290-exec-5] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 5(Integer), 0(Integer)
+2024-06-25 10:04:09.217 [TRACE] [http-nio-1290-exec-5] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:04:09.217 [TRACE] [http-nio-1290-exec-5] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:04:09.217 [TRACE] [http-nio-1290-exec-5] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:04:09.217 [DEBUG] [http-nio-1290-exec-5] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 2
+2024-06-25 10:04:10.032 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectCount] ==>  Preparing: SELECT COUNT( * ) FROM task
+2024-06-25 10:04:10.033 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectCount] ==> Parameters: 
+2024-06-25 10:04:10.033 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectCount] <==    Columns: count
+2024-06-25 10:04:10.033 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectCount] <==        Row: 1
+2024-06-25 10:04:10.033 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectCount] <==      Total: 1
+2024-06-25 10:04:10.034 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.getTaskInfo] ==>  Preparing: SELECT task_accepted.id, task_accepted.type_arr, sys_user.username AS username, sys_user.user_id AS userid, task.task_id, task.task_name, task.task_type, task.map_server, task.date_range, task.status, task.audit_feedback FROM task JOIN task_accepted ON task.task_id = task_accepted.task_id JOIN sys_user ON task_accepted.username = sys_user.username ORDER BY task.status, task.task_id DESC
+2024-06-25 10:04:10.034 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.getTaskInfo] ==> Parameters: 
+2024-06-25 10:04:10.036 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.getTaskInfo] <==    Columns: id, type_arr, username, userid, task_id, task_name, task_type, map_server, date_range, status, audit_feedback
+2024-06-25 10:04:10.036 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 267, 3,1, wh, 1, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:04:10.036 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 269, 1, wh1, 2, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:04:10.037 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.getTaskInfo] <==      Total: 2
+2024-06-25 10:04:10.037 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:04:10.037 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 3(Integer)
+2024-06-25 10:04:10.038 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:04:10.047 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==        Row: 飞机
+2024-06-25 10:04:10.047 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:04:10.048 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:04:10.048 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 3(Integer), 飞机(String), 5(Integer), 0(Integer)
+2024-06-25 10:04:10.049 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:04:10.049 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:04:10.049 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:04:10.050 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:04:10.050 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:04:10.050 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:04:10.050 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:04:10.051 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:04:10.051 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:04:10.051 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:04:10.051 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:04:10.052 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:04:10.052 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:04:10.052 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:04:10.052 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:04:10.053 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:04:10.053 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:04:10.053 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:04:10.053 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:04:10.053 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:04:10.054 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:04:10.055 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:04:10.055 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:04:10.056 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE (task_id = ?)
+2024-06-25 10:04:10.056 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] ==> Parameters: 95(Integer)
+2024-06-25 10:04:10.057 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:04:10.057 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] <==        Row: 28, 95, 1, 1, 1.2714225595566096E7, 3603851.3375258516, 1.2714182121995324E7, 3603793.054288139, 1.2714259514490107E7, 3603740.5038311933, 1.2714326396889858E7, 3603803.086659036, 1.2714270024603365E7, 3603866.14718368, 1.2714225595566096E7, 3603851.3375258516, 0
+2024-06-25 10:04:10.058 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] <==        Row: 26, 95, 1, 3, 1.2714327830091428E7, 3603759.1353677716, 1.2714348730834058E7, 3603741.9967437247, 1.2714356807680117E7, 3603771.5257866345, 1.271436939271098E7, 3603772.034101716, 1.2714380858272512E7, 3603751.491654009, 1.2714390905565225E7, 3603734.920352433, 1.2714374647785833E7, 3603717.0949876355, 1.271432639688257E7, 3603703.7185113304, 1.2714327830091428E7, 3603759.1353677716, 0
+2024-06-25 10:04:10.058 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] <==        Row: 29, 95, 1, 3, 1.2714540062263196E7, 3603615.218760874, 1.2714508532010898E7, 3603596.109514738, 1.271451999757243E7, 3603535.915362253, 1.2714591179525862E7, 3603558.368724732, 1.2714540062263196E7, 3603615.218760874, 0
+2024-06-25 10:04:10.058 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] <==      Total: 3
+2024-06-25 10:09:19.219 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (username = ?)
+2024-06-25 10:09:19.220 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.S.selectList          ] ==> Parameters: wh(String)
+2024-06-25 10:09:19.220 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.S.selectList          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:09:19.220 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.S.selectList          ] <==        Row: 1, wh, $2a$10$gceq7fafa4HhBCZBR56mpubV1XOOhFq3reEbDMZu1E.H67ZzqNRLS, 0, null, null
+2024-06-25 10:09:19.221 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.S.selectList          ] <==      Total: 1
+2024-06-25 10:09:20.495 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:09:20.495 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 5(Integer), 0(Integer)
+2024-06-25 10:09:20.496 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:09:20.496 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:09:20.496 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:09:20.496 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 2
+2024-06-25 10:09:21.187 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TaskMapper.selectCount] ==>  Preparing: SELECT COUNT( * ) FROM task
+2024-06-25 10:09:21.187 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TaskMapper.selectCount] ==> Parameters: 
+2024-06-25 10:09:21.188 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.TaskMapper.selectCount] <==    Columns: count
+2024-06-25 10:09:21.188 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.TaskMapper.selectCount] <==        Row: 1
+2024-06-25 10:09:21.188 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TaskMapper.selectCount] <==      Total: 1
+2024-06-25 10:09:21.188 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TaskMapper.getTaskInfo] ==>  Preparing: SELECT task_accepted.id, task_accepted.type_arr, sys_user.username AS username, sys_user.user_id AS userid, task.task_id, task.task_name, task.task_type, task.map_server, task.date_range, task.status, task.audit_feedback FROM task JOIN task_accepted ON task.task_id = task_accepted.task_id JOIN sys_user ON task_accepted.username = sys_user.username ORDER BY task.status, task.task_id DESC
+2024-06-25 10:09:21.188 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TaskMapper.getTaskInfo] ==> Parameters: 
+2024-06-25 10:09:21.189 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.TaskMapper.getTaskInfo] <==    Columns: id, type_arr, username, userid, task_id, task_name, task_type, map_server, date_range, status, audit_feedback
+2024-06-25 10:09:21.189 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 267, 3,1, wh, 1, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:09:21.189 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 269, 1, wh1, 2, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:09:21.189 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TaskMapper.getTaskInfo] <==      Total: 2
+2024-06-25 10:09:21.190 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:09:21.190 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 3(Integer)
+2024-06-25 10:09:21.190 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:09:21.190 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.T.getTypeNameById     ] <==        Row: 飞机
+2024-06-25 10:09:21.190 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:09:21.190 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:09:21.190 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 3(Integer), 飞机(String), 5(Integer), 0(Integer)
+2024-06-25 10:09:21.191 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:09:21.191 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:09:21.191 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:09:21.191 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:09:21.191 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:09:21.191 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:09:21.191 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:09:21.191 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:09:21.193 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:09:21.193 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:09:21.194 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:09:21.194 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:09:21.194 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:09:21.195 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:09:21.195 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:09:21.195 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:09:21.195 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:09:21.195 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:09:21.196 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:09:21.196 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:09:21.196 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:09:21.197 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:09:21.197 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:09:21.198 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.MarkMapper.selectList ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE (task_id = ?)
+2024-06-25 10:09:21.198 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.MarkMapper.selectList ] ==> Parameters: 95(Integer)
+2024-06-25 10:09:21.199 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.MarkMapper.selectList ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:09:21.199 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.MarkMapper.selectList ] <==        Row: 28, 95, 1, 1, 1.2714225595566096E7, 3603851.3375258516, 1.2714182121995324E7, 3603793.054288139, 1.2714259514490107E7, 3603740.5038311933, 1.2714326396889858E7, 3603803.086659036, 1.2714270024603365E7, 3603866.14718368, 1.2714225595566096E7, 3603851.3375258516, 0
+2024-06-25 10:09:21.199 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.MarkMapper.selectList ] <==        Row: 26, 95, 1, 3, 1.2714327830091428E7, 3603759.1353677716, 1.2714348730834058E7, 3603741.9967437247, 1.2714356807680117E7, 3603771.5257866345, 1.271436939271098E7, 3603772.034101716, 1.2714380858272512E7, 3603751.491654009, 1.2714390905565225E7, 3603734.920352433, 1.2714374647785833E7, 3603717.0949876355, 1.271432639688257E7, 3603703.7185113304, 1.2714327830091428E7, 3603759.1353677716, 0
+2024-06-25 10:09:21.199 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.MarkMapper.selectList ] <==        Row: 29, 95, 1, 3, 1.2714540062263196E7, 3603615.218760874, 1.2714508532010898E7, 3603596.109514738, 1.271451999757243E7, 3603535.915362253, 1.2714591179525862E7, 3603558.368724732, 1.2714540062263196E7, 3603615.218760874, 0
+2024-06-25 10:09:21.200 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.MarkMapper.selectList ] <==      Total: 3
+2024-06-25 10:09:49.035 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (username = ?)
+2024-06-25 10:09:49.036 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] ==> Parameters: admin(String)
+2024-06-25 10:09:49.036 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:09:49.037 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] <==        Row: 5, admin, $2a$10$2O5w.UpL8lb0X9o9lQLcDuxivpS5ShcbKzsldLrhm4MpzsBv.2W4W, 1, null, null
+2024-06-25 10:09:49.037 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] <==      Total: 1
+2024-06-25 10:09:49.039 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (username = ?)
+2024-06-25 10:09:49.039 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] ==> Parameters: admin(String)
+2024-06-25 10:09:49.040 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:09:49.040 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] <==        Row: 5, admin, $2a$10$2O5w.UpL8lb0X9o9lQLcDuxivpS5ShcbKzsldLrhm4MpzsBv.2W4W, 1, null, null
+2024-06-25 10:09:49.040 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] <==      Total: 1
+2024-06-25 10:09:49.463 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (username = ?)
+2024-06-25 10:09:49.464 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.S.selectList          ] ==> Parameters: admin(String)
+2024-06-25 10:09:49.464 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.S.selectList          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:09:49.464 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.S.selectList          ] <==        Row: 5, admin, $2a$10$2O5w.UpL8lb0X9o9lQLcDuxivpS5ShcbKzsldLrhm4MpzsBv.2W4W, 1, null, null
+2024-06-25 10:09:49.464 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.S.selectList          ] <==      Total: 1
+2024-06-25 10:09:49.719 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.selectCount] ==>  Preparing: SELECT COUNT( * ) FROM task
+2024-06-25 10:09:49.719 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.selectCount] ==> Parameters: 
+2024-06-25 10:09:49.719 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.selectCount] <==    Columns: count
+2024-06-25 10:09:49.719 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.selectCount] <==        Row: 1
+2024-06-25 10:09:49.720 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.selectCount] <==      Total: 1
+2024-06-25 10:09:49.720 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.getTaskInfo] ==>  Preparing: SELECT task_accepted.id, task_accepted.type_arr, sys_user.username AS username, sys_user.user_id AS userid, task.task_id, task.task_name, task.task_type, task.map_server, task.date_range, task.status, task.audit_feedback FROM task JOIN task_accepted ON task.task_id = task_accepted.task_id JOIN sys_user ON task_accepted.username = sys_user.username where sys_user.username=? ORDER BY task.status, task.task_id DESC
+2024-06-25 10:09:49.720 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.getTaskInfo] ==> Parameters: admin(String)
+2024-06-25 10:09:49.721 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.getTaskInfo] <==      Total: 0
+2024-06-25 10:09:49.722 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.MarkMapper.selectList ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE (task_id = ?)
+2024-06-25 10:09:49.722 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.MarkMapper.selectList ] ==> Parameters: null
+2024-06-25 10:09:49.723 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.MarkMapper.selectList ] <==      Total: 0
+2024-06-25 10:09:51.235 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.RoleMapper.selectList ] ==>  Preparing: SELECT id,rolename,rolecode FROM role
+2024-06-25 10:09:51.236 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.RoleMapper.selectList ] ==> Parameters: 
+2024-06-25 10:09:51.238 [TRACE] [http-nio-1290-exec-6] [c.e.l.m.RoleMapper.selectList ] <==    Columns: id, rolename, rolecode
+2024-06-25 10:09:51.238 [TRACE] [http-nio-1290-exec-6] [c.e.l.m.RoleMapper.selectList ] <==        Row: 1, 管理员, 1
+2024-06-25 10:09:51.239 [TRACE] [http-nio-1290-exec-6] [c.e.l.m.RoleMapper.selectList ] <==        Row: 2, 普通用户, 0
+2024-06-25 10:09:51.239 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.RoleMapper.selectList ] <==      Total: 2
+2024-06-25 10:09:51.456 [DEBUG] [http-nio-1290-exec-5] [c.e.l.m.S.selectCount         ] ==>  Preparing: SELECT COUNT( * ) FROM sys_user WHERE (is_admin = ?)
+2024-06-25 10:09:51.457 [DEBUG] [http-nio-1290-exec-5] [c.e.l.m.S.selectCount         ] ==> Parameters: 1(Integer)
+2024-06-25 10:09:51.458 [TRACE] [http-nio-1290-exec-5] [c.e.l.m.S.selectCount         ] <==    Columns: count
+2024-06-25 10:09:51.458 [TRACE] [http-nio-1290-exec-5] [c.e.l.m.S.selectCount         ] <==        Row: 1
+2024-06-25 10:09:51.459 [DEBUG] [http-nio-1290-exec-5] [c.e.l.m.S.selectCount         ] <==      Total: 1
+2024-06-25 10:09:51.465 [DEBUG] [http-nio-1290-exec-5] [c.e.l.m.S.selectPage          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (is_admin = ?) ORDER BY user_id ASC
+2024-06-25 10:09:51.465 [DEBUG] [http-nio-1290-exec-5] [c.e.l.m.S.selectPage          ] ==> Parameters: 1(Integer)
+2024-06-25 10:09:51.465 [TRACE] [http-nio-1290-exec-5] [c.e.l.m.S.selectPage          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:09:51.466 [TRACE] [http-nio-1290-exec-5] [c.e.l.m.S.selectPage          ] <==        Row: 5, admin, $2a$10$2O5w.UpL8lb0X9o9lQLcDuxivpS5ShcbKzsldLrhm4MpzsBv.2W4W, 1, null, null
+2024-06-25 10:09:51.466 [DEBUG] [http-nio-1290-exec-5] [c.e.l.m.S.selectPage          ] <==      Total: 1
+2024-06-25 10:09:51.969 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.S.getAllFiles         ] ==>  Preparing: SELECT * FROM file ORDER BY file_id DESC LIMIT ? OFFSET ?
+2024-06-25 10:09:51.969 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.S.getAllFiles         ] ==> Parameters: 8(Integer), 0(Integer)
+2024-06-25 10:09:51.973 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.S.getAllFiles         ] <==    Columns: file_id, file_name, update_time, status, size
+2024-06-25 10:09:51.973 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.S.getAllFiles         ] <==        Row: 96, airport.tif, 2024-6-4 15:56:24, 1, 240 MB
+2024-06-25 10:09:51.973 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.S.getAllFiles         ] <==        Row: 67, 湖北.tif, 2023-4-26 17:45:54, 1, 279 MB
+2024-06-25 10:09:51.973 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.S.getAllFiles         ] <==        Row: 65, 小天河机场.tiff, 2023-4-26 17:44:29, 1, 865 MB
+2024-06-25 10:09:51.974 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.S.getAllFiles         ] <==        Row: 64, 深圳宝安机场.tif, 2023-4-26 17:42:19, 1, 5.58 GB
+2024-06-25 10:09:51.974 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.S.getAllFiles         ] <==      Total: 4
+2024-06-25 10:09:56.398 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectCount] ==>  Preparing: SELECT COUNT( * ) FROM task
+2024-06-25 10:09:56.400 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectCount] ==> Parameters: 
+2024-06-25 10:09:56.400 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectCount] <==    Columns: count
+2024-06-25 10:09:56.400 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectCount] <==        Row: 1
+2024-06-25 10:09:56.400 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectCount] <==      Total: 1
+2024-06-25 10:09:56.401 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.getTaskInfo] ==>  Preparing: SELECT task_accepted.id, task_accepted.type_arr, sys_user.username AS username, sys_user.user_id AS userid, task.task_id, task.task_name, task.task_type, task.map_server, task.date_range, task.status, task.audit_feedback FROM task JOIN task_accepted ON task.task_id = task_accepted.task_id JOIN sys_user ON task_accepted.username = sys_user.username ORDER BY task.status, task.task_id DESC
+2024-06-25 10:09:56.401 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.getTaskInfo] ==> Parameters: 
+2024-06-25 10:09:56.402 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.getTaskInfo] <==    Columns: id, type_arr, username, userid, task_id, task_name, task_type, map_server, date_range, status, audit_feedback
+2024-06-25 10:09:56.402 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 267, 3,1, wh, 1, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:09:56.403 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 269, 1, wh1, 2, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:09:56.404 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.getTaskInfo] <==      Total: 2
+2024-06-25 10:09:56.404 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:09:56.404 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 3(Integer)
+2024-06-25 10:09:56.405 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:09:56.405 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==        Row: 飞机
+2024-06-25 10:09:56.405 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:09:56.406 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:09:56.406 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 3(Integer), 飞机(String), 5(Integer), 0(Integer)
+2024-06-25 10:09:56.406 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:09:56.406 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:09:56.406 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:09:56.407 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:09:56.407 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:09:56.407 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:09:56.407 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:09:56.407 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:09:56.408 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:09:56.408 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:09:56.408 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:09:56.408 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:09:56.409 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:09:56.409 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:09:56.409 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:09:56.409 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:09:56.409 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:09:56.409 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:09:56.410 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:09:56.410 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:09:56.410 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:09:56.410 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:09:56.411 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:09:56.412 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE (task_id = ?)
+2024-06-25 10:09:56.412 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] ==> Parameters: null
+2024-06-25 10:09:56.412 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] <==      Total: 0
+2024-06-25 10:09:59.026 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.S.getAllFiles         ] ==>  Preparing: SELECT * FROM file ORDER BY file_id DESC LIMIT ? OFFSET ?
+2024-06-25 10:09:59.027 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.S.getAllFiles         ] ==> Parameters: 8(Integer), 0(Integer)
+2024-06-25 10:09:59.028 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.S.getAllFiles         ] <==    Columns: file_id, file_name, update_time, status, size
+2024-06-25 10:09:59.028 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.S.getAllFiles         ] <==        Row: 96, airport.tif, 2024-6-4 15:56:24, 1, 240 MB
+2024-06-25 10:09:59.028 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.S.getAllFiles         ] <==        Row: 67, 湖北.tif, 2023-4-26 17:45:54, 1, 279 MB
+2024-06-25 10:09:59.029 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.S.getAllFiles         ] <==        Row: 65, 小天河机场.tiff, 2023-4-26 17:44:29, 1, 865 MB
+2024-06-25 10:09:59.029 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.S.getAllFiles         ] <==        Row: 64, 深圳宝安机场.tif, 2023-4-26 17:42:19, 1, 5.58 GB
+2024-06-25 10:09:59.029 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.S.getAllFiles         ] <==      Total: 4
+2024-06-25 10:12:06.120 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (username = ?)
+2024-06-25 10:12:06.120 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.S.selectList          ] ==> Parameters: admin(String)
+2024-06-25 10:12:06.121 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.S.selectList          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:12:06.121 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.S.selectList          ] <==        Row: 5, admin, $2a$10$2O5w.UpL8lb0X9o9lQLcDuxivpS5ShcbKzsldLrhm4MpzsBv.2W4W, 1, null, null
+2024-06-25 10:12:06.122 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.S.selectList          ] <==      Total: 1
+2024-06-25 10:12:06.702 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.S.getAllFiles         ] ==>  Preparing: SELECT * FROM file ORDER BY file_id DESC LIMIT ? OFFSET ?
+2024-06-25 10:12:06.702 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.S.getAllFiles         ] ==> Parameters: 8(Integer), 0(Integer)
+2024-06-25 10:12:06.703 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.S.getAllFiles         ] <==    Columns: file_id, file_name, update_time, status, size
+2024-06-25 10:12:06.703 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.S.getAllFiles         ] <==        Row: 96, airport.tif, 2024-6-4 15:56:24, 0, 240 MB
+2024-06-25 10:12:06.703 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.S.getAllFiles         ] <==        Row: 67, 湖北.tif, 2023-4-26 17:45:54, 1, 279 MB
+2024-06-25 10:12:06.705 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.S.getAllFiles         ] <==        Row: 65, 小天河机场.tiff, 2023-4-26 17:44:29, 1, 865 MB
+2024-06-25 10:12:06.705 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.S.getAllFiles         ] <==        Row: 64, 深圳宝安机场.tif, 2023-4-26 17:42:19, 1, 5.58 GB
+2024-06-25 10:12:06.705 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.S.getAllFiles         ] <==      Total: 4
+2024-06-25 10:12:09.244 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectCount] ==>  Preparing: SELECT COUNT( * ) FROM task
+2024-06-25 10:12:09.244 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectCount] ==> Parameters: 
+2024-06-25 10:12:09.245 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectCount] <==    Columns: count
+2024-06-25 10:12:09.245 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectCount] <==        Row: 1
+2024-06-25 10:12:09.245 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectCount] <==      Total: 1
+2024-06-25 10:12:09.245 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.getTaskInfo] ==>  Preparing: SELECT task_accepted.id, task_accepted.type_arr, sys_user.username AS username, sys_user.user_id AS userid, task.task_id, task.task_name, task.task_type, task.map_server, task.date_range, task.status, task.audit_feedback FROM task JOIN task_accepted ON task.task_id = task_accepted.task_id JOIN sys_user ON task_accepted.username = sys_user.username ORDER BY task.status, task.task_id DESC
+2024-06-25 10:12:09.245 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.getTaskInfo] ==> Parameters: 
+2024-06-25 10:12:09.247 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.getTaskInfo] <==    Columns: id, type_arr, username, userid, task_id, task_name, task_type, map_server, date_range, status, audit_feedback
+2024-06-25 10:12:09.248 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 267, 3,1, wh, 1, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:12:09.249 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 269, 1, wh1, 2, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:12:09.250 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.getTaskInfo] <==      Total: 2
+2024-06-25 10:12:09.250 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:12:09.250 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 3(Integer)
+2024-06-25 10:12:09.251 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:12:09.251 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] <==        Row: 飞机
+2024-06-25 10:12:09.251 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:12:09.251 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:12:09.251 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 3(Integer), 飞机(String), 5(Integer), 0(Integer)
+2024-06-25 10:12:09.252 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:12:09.252 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:12:09.252 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:12:09.252 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:12:09.252 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:12:09.252 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:12:09.252 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:12:09.252 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:12:09.253 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:12:09.253 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:12:09.253 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:12:09.253 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:12:09.254 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:12:09.254 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:12:09.254 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:12:09.255 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:12:09.255 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:12:09.255 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:12:09.255 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:12:09.255 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:12:09.256 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:12:09.256 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:12:09.257 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:12:09.258 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE (task_id = ?)
+2024-06-25 10:12:09.258 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] ==> Parameters: null
+2024-06-25 10:12:09.263 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] <==      Total: 0
+2024-06-25 10:12:12.147 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:12:12.148 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 5(Integer), 0(Integer)
+2024-06-25 10:12:12.148 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:12:12.148 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:12:12.148 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:12:12.148 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 2
+2024-06-25 10:12:12.734 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT ser_id,ser_name,ser_desc,ser_year,publisher,publish_url,publish_time FROM server
+2024-06-25 10:12:12.734 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.S.selectList          ] ==> Parameters: 
+2024-06-25 10:12:12.735 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.S.selectList          ] <==    Columns: ser_id, ser_name, ser_desc, ser_year, publisher, publish_url, publish_time
+2024-06-25 10:12:12.735 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.S.selectList          ] <==        Row: 99, 深圳宝安机场, 深圳宝安机场, 2020, admin, null, 2023-4-26 17:43:04
+2024-06-25 10:12:12.736 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.S.selectList          ] <==        Row: 100, 小天河机场, 天河机场高分辨率, 2023, admin, null, 2023-4-26 17:44:52
+2024-06-25 10:12:12.736 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.S.selectList          ] <==        Row: 102, 湖北, 湖北省, 2022, admin, null, 2023-4-26 17:46:05
+2024-06-25 10:12:12.736 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.S.selectList          ] <==        Row: 134, airport, 222, 2023, admin, http://localhost:8080/geoserver/rest/workspaces/LUU/coveragestores/airport/coverages, 2024-6-4 16:28:45
+2024-06-25 10:12:12.736 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.S.selectList          ] <==      Total: 4
+2024-06-25 10:12:26.053 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.ServerMapper.delete   ] ==>  Preparing: DELETE FROM server WHERE (ser_name = ?)
+2024-06-25 10:12:26.053 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.ServerMapper.delete   ] ==> Parameters: 湖北(String)
+2024-06-25 10:12:26.066 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.ServerMapper.delete   ] <==    Updates: 1
+2024-06-25 10:12:26.318 [DEBUG] [http-nio-1290-exec-5] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT ser_id,ser_name,ser_desc,ser_year,publisher,publish_url,publish_time FROM server
+2024-06-25 10:12:26.318 [DEBUG] [http-nio-1290-exec-5] [c.e.l.m.S.selectList          ] ==> Parameters: 
+2024-06-25 10:12:26.319 [TRACE] [http-nio-1290-exec-5] [c.e.l.m.S.selectList          ] <==    Columns: ser_id, ser_name, ser_desc, ser_year, publisher, publish_url, publish_time
+2024-06-25 10:12:26.319 [TRACE] [http-nio-1290-exec-5] [c.e.l.m.S.selectList          ] <==        Row: 99, 深圳宝安机场, 深圳宝安机场, 2020, admin, null, 2023-4-26 17:43:04
+2024-06-25 10:12:26.319 [TRACE] [http-nio-1290-exec-5] [c.e.l.m.S.selectList          ] <==        Row: 100, 小天河机场, 天河机场高分辨率, 2023, admin, null, 2023-4-26 17:44:52
+2024-06-25 10:12:26.319 [TRACE] [http-nio-1290-exec-5] [c.e.l.m.S.selectList          ] <==        Row: 134, airport, 222, 2023, admin, http://localhost:8080/geoserver/rest/workspaces/LUU/coveragestores/airport/coverages, 2024-6-4 16:28:45
+2024-06-25 10:12:26.319 [DEBUG] [http-nio-1290-exec-5] [c.e.l.m.S.selectList          ] <==      Total: 3
+2024-06-25 10:12:35.737 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.ServerMapper.delete   ] ==>  Preparing: DELETE FROM server WHERE (ser_name = ?)
+2024-06-25 10:12:35.737 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.ServerMapper.delete   ] ==> Parameters: airport(String)
+2024-06-25 10:12:35.748 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.ServerMapper.delete   ] <==    Updates: 1
+2024-06-25 10:12:35.998 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT ser_id,ser_name,ser_desc,ser_year,publisher,publish_url,publish_time FROM server
+2024-06-25 10:12:35.999 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.S.selectList          ] ==> Parameters: 
+2024-06-25 10:12:35.999 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.S.selectList          ] <==    Columns: ser_id, ser_name, ser_desc, ser_year, publisher, publish_url, publish_time
+2024-06-25 10:12:35.999 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.S.selectList          ] <==        Row: 99, 深圳宝安机场, 深圳宝安机场, 2020, admin, null, 2023-4-26 17:43:04
+2024-06-25 10:12:35.999 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.S.selectList          ] <==        Row: 100, 小天河机场, 天河机场高分辨率, 2023, admin, null, 2023-4-26 17:44:52
+2024-06-25 10:12:35.999 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.S.selectList          ] <==      Total: 2
+2024-06-25 10:13:01.309 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.S.getAllFiles         ] ==>  Preparing: SELECT * FROM file ORDER BY file_id DESC LIMIT ? OFFSET ?
+2024-06-25 10:13:01.310 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.S.getAllFiles         ] ==> Parameters: 8(Integer), 0(Integer)
+2024-06-25 10:13:01.310 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.S.getAllFiles         ] <==    Columns: file_id, file_name, update_time, status, size
+2024-06-25 10:13:01.310 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.S.getAllFiles         ] <==        Row: 96, airport.tif, 2024-6-4 15:56:24, 0, 240 MB
+2024-06-25 10:13:01.310 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.S.getAllFiles         ] <==        Row: 67, 湖北.tif, 2023-4-26 17:45:54, 1, 279 MB
+2024-06-25 10:13:01.310 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.S.getAllFiles         ] <==        Row: 65, 小天河机场.tiff, 2023-4-26 17:44:29, 1, 865 MB
+2024-06-25 10:13:01.310 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.S.getAllFiles         ] <==        Row: 64, 深圳宝安机场.tif, 2023-4-26 17:42:19, 1, 5.58 GB
+2024-06-25 10:13:01.311 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.S.getAllFiles         ] <==      Total: 4
+2024-06-25 10:13:05.529 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.SysFileMapper.delete  ] ==>  Preparing: DELETE FROM file WHERE (file_name = ?)
+2024-06-25 10:13:05.529 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.SysFileMapper.delete  ] ==> Parameters: airport.tif(String)
+2024-06-25 10:13:05.530 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.SysFileMapper.delete  ] <==    Updates: 1
+2024-06-25 10:13:05.904 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.S.getAllFiles         ] ==>  Preparing: SELECT * FROM file ORDER BY file_id DESC LIMIT ? OFFSET ?
+2024-06-25 10:13:05.905 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.S.getAllFiles         ] ==> Parameters: 8(Integer), 0(Integer)
+2024-06-25 10:13:05.905 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.S.getAllFiles         ] <==    Columns: file_id, file_name, update_time, status, size
+2024-06-25 10:13:05.905 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.S.getAllFiles         ] <==        Row: 67, 湖北.tif, 2023-4-26 17:45:54, 1, 279 MB
+2024-06-25 10:13:05.906 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.S.getAllFiles         ] <==        Row: 65, 小天河机场.tiff, 2023-4-26 17:44:29, 1, 865 MB
+2024-06-25 10:13:05.906 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.S.getAllFiles         ] <==        Row: 64, 深圳宝安机场.tif, 2023-4-26 17:42:19, 1, 5.58 GB
+2024-06-25 10:13:05.906 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.S.getAllFiles         ] <==      Total: 3
+2024-06-25 10:13:27.375 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.S.createFile          ] ==>  Preparing: INSERT INTO file(file_name, update_time, status, size) values (?, ?, 0, ?)
+2024-06-25 10:13:27.375 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.S.createFile          ] ==> Parameters: airport.tif(String), 2024-6-25 10:13:27(String), 240 MB(String)
+2024-06-25 10:13:27.378 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.S.createFile          ] <==    Updates: 1
+2024-06-25 10:13:27.473 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.S.getAllFiles         ] ==>  Preparing: SELECT * FROM file ORDER BY file_id DESC LIMIT ? OFFSET ?
+2024-06-25 10:13:27.474 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.S.getAllFiles         ] ==> Parameters: 8(Integer), 0(Integer)
+2024-06-25 10:13:27.474 [TRACE] [http-nio-1290-exec-6] [c.e.l.m.S.getAllFiles         ] <==    Columns: file_id, file_name, update_time, status, size
+2024-06-25 10:13:27.475 [TRACE] [http-nio-1290-exec-6] [c.e.l.m.S.getAllFiles         ] <==        Row: 97, airport.tif, 2024-6-25 10:13:27, 0, 240 MB
+2024-06-25 10:13:27.475 [TRACE] [http-nio-1290-exec-6] [c.e.l.m.S.getAllFiles         ] <==        Row: 67, 湖北.tif, 2023-4-26 17:45:54, 1, 279 MB
+2024-06-25 10:13:27.476 [TRACE] [http-nio-1290-exec-6] [c.e.l.m.S.getAllFiles         ] <==        Row: 65, 小天河机场.tiff, 2023-4-26 17:44:29, 1, 865 MB
+2024-06-25 10:13:27.476 [TRACE] [http-nio-1290-exec-6] [c.e.l.m.S.getAllFiles         ] <==        Row: 64, 深圳宝安机场.tif, 2023-4-26 17:42:19, 1, 5.58 GB
+2024-06-25 10:13:27.476 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.S.getAllFiles         ] <==      Total: 4
+2024-06-25 10:13:44.133 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.ServerMapper.insert   ] ==>  Preparing: INSERT INTO server ( ser_name, ser_desc, ser_year, publisher, publish_url, publish_time ) VALUES ( ?, ?, ?, ?, ?, ? )
+2024-06-25 10:13:44.133 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.ServerMapper.insert   ] ==> Parameters: airport(String), test(String), 2026(String), admin(String), http://localhost:8080/geoserver/rest/workspaces/LUU/coveragestores/airport/coverages(String), 2024-6-25 10:13:38(String)
+2024-06-25 10:13:44.135 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.ServerMapper.insert   ] <==    Updates: 1
+2024-06-25 10:13:44.141 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.SysFileMapper.update  ] ==>  Preparing: UPDATE file SET status=? WHERE (file_name = ?)
+2024-06-25 10:13:44.142 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.SysFileMapper.update  ] ==> Parameters: 1(Integer), airport.tif(String)
+2024-06-25 10:13:44.142 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.SysFileMapper.update  ] <==    Updates: 1
+2024-06-25 10:13:44.224 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.S.getAllFiles         ] ==>  Preparing: SELECT * FROM file ORDER BY file_id DESC LIMIT ? OFFSET ?
+2024-06-25 10:13:44.224 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.S.getAllFiles         ] ==> Parameters: 8(Integer), 0(Integer)
+2024-06-25 10:13:44.225 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.S.getAllFiles         ] <==    Columns: file_id, file_name, update_time, status, size
+2024-06-25 10:13:44.225 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.S.getAllFiles         ] <==        Row: 97, airport.tif, 2024-6-25 10:13:27, 1, 240 MB
+2024-06-25 10:13:44.225 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.S.getAllFiles         ] <==        Row: 67, 湖北.tif, 2023-4-26 17:45:54, 1, 279 MB
+2024-06-25 10:13:44.226 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.S.getAllFiles         ] <==        Row: 65, 小天河机场.tiff, 2023-4-26 17:44:29, 1, 865 MB
+2024-06-25 10:13:44.226 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.S.getAllFiles         ] <==        Row: 64, 深圳宝安机场.tif, 2023-4-26 17:42:19, 1, 5.58 GB
+2024-06-25 10:13:44.226 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.S.getAllFiles         ] <==      Total: 4
+2024-06-25 10:14:15.484 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT ser_id,ser_name,ser_desc,ser_year,publisher,publish_url,publish_time FROM server
+2024-06-25 10:14:15.484 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.S.selectList          ] ==> Parameters: 
+2024-06-25 10:14:15.485 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.S.selectList          ] <==    Columns: ser_id, ser_name, ser_desc, ser_year, publisher, publish_url, publish_time
+2024-06-25 10:14:15.485 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.S.selectList          ] <==        Row: 99, 深圳宝安机场, 深圳宝安机场, 2020, admin, null, 2023-4-26 17:43:04
+2024-06-25 10:14:15.486 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.S.selectList          ] <==        Row: 100, 小天河机场, 天河机场高分辨率, 2023, admin, null, 2023-4-26 17:44:52
+2024-06-25 10:14:15.486 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.S.selectList          ] <==        Row: 135, airport, test, 2026, admin, http://localhost:8080/geoserver/rest/workspaces/LUU/coveragestores/airport/coverages, 2024-6-25 10:13:38
+2024-06-25 10:14:15.486 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.S.selectList          ] <==      Total: 3
+2024-06-25 10:14:29.750 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (username = ?)
+2024-06-25 10:14:29.750 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.S.selectList          ] ==> Parameters: admin(String)
+2024-06-25 10:14:29.752 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.S.selectList          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:14:29.752 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.S.selectList          ] <==        Row: 5, admin, $2a$10$2O5w.UpL8lb0X9o9lQLcDuxivpS5ShcbKzsldLrhm4MpzsBv.2W4W, 1, null, null
+2024-06-25 10:14:29.753 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.S.selectList          ] <==      Total: 1
+2024-06-25 10:14:31.561 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:14:31.562 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 5(Integer), 0(Integer)
+2024-06-25 10:14:31.563 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:14:31.564 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:14:31.564 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:14:31.565 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 2
+2024-06-25 10:14:33.411 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectCount] ==>  Preparing: SELECT COUNT( * ) FROM task
+2024-06-25 10:14:33.412 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectCount] ==> Parameters: 
+2024-06-25 10:14:33.412 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectCount] <==    Columns: count
+2024-06-25 10:14:33.413 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectCount] <==        Row: 1
+2024-06-25 10:14:33.413 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectCount] <==      Total: 1
+2024-06-25 10:14:33.414 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.getTaskInfo] ==>  Preparing: SELECT task_accepted.id, task_accepted.type_arr, sys_user.username AS username, sys_user.user_id AS userid, task.task_id, task.task_name, task.task_type, task.map_server, task.date_range, task.status, task.audit_feedback FROM task JOIN task_accepted ON task.task_id = task_accepted.task_id JOIN sys_user ON task_accepted.username = sys_user.username ORDER BY task.status, task.task_id DESC
+2024-06-25 10:14:33.415 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.getTaskInfo] ==> Parameters: 
+2024-06-25 10:14:33.416 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.getTaskInfo] <==    Columns: id, type_arr, username, userid, task_id, task_name, task_type, map_server, date_range, status, audit_feedback
+2024-06-25 10:14:33.416 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 267, 3,1, wh, 1, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:14:33.417 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 269, 1, wh1, 2, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:14:33.418 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.getTaskInfo] <==      Total: 2
+2024-06-25 10:14:33.418 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:14:33.419 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 3(Integer)
+2024-06-25 10:14:33.419 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:14:33.420 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] <==        Row: 飞机
+2024-06-25 10:14:33.420 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:14:33.421 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:14:33.421 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 3(Integer), 飞机(String), 5(Integer), 0(Integer)
+2024-06-25 10:14:33.422 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:14:33.422 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:14:33.423 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:14:33.423 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:14:33.423 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:14:33.424 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:14:33.425 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:14:33.425 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:14:33.425 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:14:33.425 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:14:33.426 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:14:33.427 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:14:33.427 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:14:33.428 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:14:33.428 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:14:33.429 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:14:33.429 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:14:33.429 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:14:33.431 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:14:33.431 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:14:33.432 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:14:33.432 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:14:33.432 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:14:33.436 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE (task_id = ?)
+2024-06-25 10:14:33.436 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] ==> Parameters: 95(Integer)
+2024-06-25 10:14:33.437 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:14:33.437 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] <==        Row: 28, 95, 1, 1, 1.2714225595566096E7, 3603851.3375258516, 1.2714182121995324E7, 3603793.054288139, 1.2714259514490107E7, 3603740.5038311933, 1.2714326396889858E7, 3603803.086659036, 1.2714270024603365E7, 3603866.14718368, 1.2714225595566096E7, 3603851.3375258516, 0
+2024-06-25 10:14:33.438 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] <==        Row: 26, 95, 1, 3, 1.2714327830091428E7, 3603759.1353677716, 1.2714348730834058E7, 3603741.9967437247, 1.2714356807680117E7, 3603771.5257866345, 1.271436939271098E7, 3603772.034101716, 1.2714380858272512E7, 3603751.491654009, 1.2714390905565225E7, 3603734.920352433, 1.2714374647785833E7, 3603717.0949876355, 1.271432639688257E7, 3603703.7185113304, 1.2714327830091428E7, 3603759.1353677716, 0
+2024-06-25 10:14:33.438 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] <==        Row: 29, 95, 1, 3, 1.2714540062263196E7, 3603615.218760874, 1.2714508532010898E7, 3603596.109514738, 1.271451999757243E7, 3603535.915362253, 1.2714591179525862E7, 3603558.368724732, 1.2714540062263196E7, 3603615.218760874, 0
+2024-06-25 10:14:33.438 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] <==      Total: 3
+2024-06-25 10:15:03.857 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TaskMapper.selectCount] ==>  Preparing: SELECT COUNT( * ) FROM task
+2024-06-25 10:15:03.858 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TaskMapper.selectCount] ==> Parameters: 
+2024-06-25 10:15:03.860 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TaskMapper.selectCount] <==    Columns: count
+2024-06-25 10:15:03.860 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TaskMapper.selectCount] <==        Row: 1
+2024-06-25 10:15:03.860 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TaskMapper.selectCount] <==      Total: 1
+2024-06-25 10:15:03.861 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TaskMapper.getTaskInfo] ==>  Preparing: SELECT task_accepted.id, task_accepted.type_arr, sys_user.username AS username, sys_user.user_id AS userid, task.task_id, task.task_name, task.task_type, task.map_server, task.date_range, task.status, task.audit_feedback FROM task JOIN task_accepted ON task.task_id = task_accepted.task_id JOIN sys_user ON task_accepted.username = sys_user.username ORDER BY task.status, task.task_id DESC
+2024-06-25 10:15:03.861 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TaskMapper.getTaskInfo] ==> Parameters: 
+2024-06-25 10:15:03.862 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TaskMapper.getTaskInfo] <==    Columns: id, type_arr, username, userid, task_id, task_name, task_type, map_server, date_range, status, audit_feedback
+2024-06-25 10:15:03.862 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 267, 3,1, wh, 1, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:15:03.863 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 269, 1, wh1, 2, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:15:03.863 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TaskMapper.getTaskInfo] <==      Total: 2
+2024-06-25 10:15:03.863 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:15:03.863 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 3(Integer)
+2024-06-25 10:15:03.864 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:15:03.865 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.T.getTypeNameById     ] <==        Row: 飞机
+2024-06-25 10:15:03.866 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:15:03.867 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:15:03.867 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 3(Integer), 飞机(String), 5(Integer), 0(Integer)
+2024-06-25 10:15:03.868 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:15:03.868 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:15:03.868 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:15:03.868 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:15:03.869 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:15:03.869 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:15:03.869 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:15:03.869 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:15:03.869 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:15:03.870 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:15:03.871 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:15:03.871 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:15:03.873 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:15:03.873 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:15:03.877 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:15:03.878 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:15:03.878 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:15:03.878 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:15:03.879 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:15:03.880 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:15:03.880 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:15:03.880 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:15:03.881 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:15:03.883 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.MarkMapper.selectList ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE (task_id = ?)
+2024-06-25 10:15:03.884 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.MarkMapper.selectList ] ==> Parameters: null
+2024-06-25 10:15:03.886 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.MarkMapper.selectList ] <==      Total: 0
+2024-06-25 10:15:42.985 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (username = ?)
+2024-06-25 10:15:42.986 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] ==> Parameters: wh(String)
+2024-06-25 10:15:42.987 [TRACE] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:15:42.987 [TRACE] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] <==        Row: 1, wh, $2a$10$gceq7fafa4HhBCZBR56mpubV1XOOhFq3reEbDMZu1E.H67ZzqNRLS, 0, null, null
+2024-06-25 10:15:42.987 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] <==      Total: 1
+2024-06-25 10:15:42.988 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (username = ?)
+2024-06-25 10:15:42.989 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] ==> Parameters: wh(String)
+2024-06-25 10:15:42.989 [TRACE] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:15:42.989 [TRACE] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] <==        Row: 1, wh, $2a$10$gceq7fafa4HhBCZBR56mpubV1XOOhFq3reEbDMZu1E.H67ZzqNRLS, 0, null, null
+2024-06-25 10:15:42.990 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] <==      Total: 1
+2024-06-25 10:15:43.172 [DEBUG] [http-nio-1290-exec-5] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (username = ?)
+2024-06-25 10:15:43.173 [DEBUG] [http-nio-1290-exec-5] [c.e.l.m.S.selectList          ] ==> Parameters: wh(String)
+2024-06-25 10:15:43.173 [TRACE] [http-nio-1290-exec-5] [c.e.l.m.S.selectList          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:15:43.173 [TRACE] [http-nio-1290-exec-5] [c.e.l.m.S.selectList          ] <==        Row: 1, wh, $2a$10$gceq7fafa4HhBCZBR56mpubV1XOOhFq3reEbDMZu1E.H67ZzqNRLS, 0, null, null
+2024-06-25 10:15:43.174 [DEBUG] [http-nio-1290-exec-5] [c.e.l.m.S.selectList          ] <==      Total: 1
+2024-06-25 10:15:43.574 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.selectCount] ==>  Preparing: SELECT COUNT( * ) FROM task
+2024-06-25 10:15:43.575 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.selectCount] ==> Parameters: 
+2024-06-25 10:15:43.575 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.selectCount] <==    Columns: count
+2024-06-25 10:15:43.575 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.selectCount] <==        Row: 1
+2024-06-25 10:15:43.575 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.selectCount] <==      Total: 1
+2024-06-25 10:15:43.576 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.getTaskInfo] ==>  Preparing: SELECT task_accepted.id, task_accepted.type_arr, sys_user.username AS username, sys_user.user_id AS userid, task.task_id, task.task_name, task.task_type, task.map_server, task.date_range, task.status, task.audit_feedback FROM task JOIN task_accepted ON task.task_id = task_accepted.task_id JOIN sys_user ON task_accepted.username = sys_user.username where sys_user.username=? ORDER BY task.status, task.task_id DESC
+2024-06-25 10:15:43.576 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.getTaskInfo] ==> Parameters: wh(String)
+2024-06-25 10:15:43.577 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.getTaskInfo] <==    Columns: id, type_arr, username, userid, task_id, task_name, task_type, map_server, date_range, status, audit_feedback
+2024-06-25 10:15:43.577 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 267, 3,1, wh, 1, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:15:43.577 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.getTaskInfo] <==      Total: 1
+2024-06-25 10:15:43.578 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:15:43.579 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 3(Integer)
+2024-06-25 10:15:43.579 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:15:43.579 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==        Row: 飞机
+2024-06-25 10:15:43.579 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:15:43.580 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:15:43.580 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 3(Integer), 飞机(String), 5(Integer), 0(Integer)
+2024-06-25 10:15:43.580 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:15:43.580 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:15:43.581 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:15:43.581 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:15:43.581 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:15:43.582 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:15:43.582 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:15:43.582 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:15:43.582 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:15:43.582 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:15:43.583 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:15:43.583 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:15:43.583 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:15:43.585 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.MarkMapper.selectList ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE (task_id = ?)
+2024-06-25 10:15:43.585 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.MarkMapper.selectList ] ==> Parameters: null
+2024-06-25 10:15:43.586 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.MarkMapper.selectList ] <==      Total: 0
+2024-06-25 10:15:44.791 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectCount] ==>  Preparing: SELECT COUNT( * ) FROM task
+2024-06-25 10:15:44.791 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectCount] ==> Parameters: 
+2024-06-25 10:15:44.792 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectCount] <==    Columns: count
+2024-06-25 10:15:44.792 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectCount] <==        Row: 1
+2024-06-25 10:15:44.792 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectCount] <==      Total: 1
+2024-06-25 10:15:44.793 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.getTaskInfo] ==>  Preparing: SELECT task_accepted.id, task_accepted.type_arr, sys_user.username AS username, sys_user.user_id AS userid, task.task_id, task.task_name, task.task_type, task.map_server, task.date_range, task.status, task.audit_feedback FROM task JOIN task_accepted ON task.task_id = task_accepted.task_id JOIN sys_user ON task_accepted.username = sys_user.username where sys_user.username=? ORDER BY task.status, task.task_id DESC
+2024-06-25 10:15:44.795 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.getTaskInfo] ==> Parameters: wh(String)
+2024-06-25 10:15:44.797 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.getTaskInfo] <==    Columns: id, type_arr, username, userid, task_id, task_name, task_type, map_server, date_range, status, audit_feedback
+2024-06-25 10:15:44.797 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 267, 3,1, wh, 1, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:15:44.798 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.getTaskInfo] <==      Total: 1
+2024-06-25 10:15:44.800 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:15:44.800 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 3(Integer)
+2024-06-25 10:15:44.801 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:15:44.801 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==        Row: 飞机
+2024-06-25 10:15:44.801 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:15:44.802 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:15:44.802 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 3(Integer), 飞机(String), 5(Integer), 0(Integer)
+2024-06-25 10:15:44.803 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:15:44.803 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:15:44.804 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:15:44.804 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:15:44.804 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:15:44.805 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:15:44.806 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:15:44.806 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:15:44.806 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:15:44.806 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:15:44.807 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:15:44.807 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:15:44.807 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:15:44.809 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE (task_id = ?)
+2024-06-25 10:15:44.809 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] ==> Parameters: null
+2024-06-25 10:15:44.811 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] <==      Total: 0
+2024-06-25 10:15:53.883 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (username = ?)
+2024-06-25 10:15:53.883 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.S.selectList          ] ==> Parameters: wh(String)
+2024-06-25 10:15:53.885 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.S.selectList          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:15:53.886 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.S.selectList          ] <==        Row: 1, wh, $2a$10$gceq7fafa4HhBCZBR56mpubV1XOOhFq3reEbDMZu1E.H67ZzqNRLS, 0, null, null
+2024-06-25 10:15:53.886 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.S.selectList          ] <==      Total: 1
+2024-06-25 10:15:54.177 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:15:54.178 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 5(Integer), 0(Integer)
+2024-06-25 10:15:54.178 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:15:54.178 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:15:54.179 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:15:54.179 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 2
+2024-06-25 10:15:54.198 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.selectCount] ==>  Preparing: SELECT COUNT( * ) FROM task
+2024-06-25 10:15:54.199 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.selectCount] ==> Parameters: 
+2024-06-25 10:15:54.200 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.selectCount] <==    Columns: count
+2024-06-25 10:15:54.200 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.selectCount] <==        Row: 1
+2024-06-25 10:15:54.200 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.selectCount] <==      Total: 1
+2024-06-25 10:15:54.200 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.getTaskInfo] ==>  Preparing: SELECT task_accepted.id, task_accepted.type_arr, sys_user.username AS username, sys_user.user_id AS userid, task.task_id, task.task_name, task.task_type, task.map_server, task.date_range, task.status, task.audit_feedback FROM task JOIN task_accepted ON task.task_id = task_accepted.task_id JOIN sys_user ON task_accepted.username = sys_user.username ORDER BY task.status, task.task_id DESC
+2024-06-25 10:15:54.201 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.getTaskInfo] ==> Parameters: 
+2024-06-25 10:15:54.202 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.getTaskInfo] <==    Columns: id, type_arr, username, userid, task_id, task_name, task_type, map_server, date_range, status, audit_feedback
+2024-06-25 10:15:54.202 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 267, 3,1, wh, 1, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:15:54.202 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 269, 1, wh1, 2, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:15:54.202 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.getTaskInfo] <==      Total: 2
+2024-06-25 10:15:54.203 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:15:54.203 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 3(Integer)
+2024-06-25 10:15:54.203 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:15:54.203 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==        Row: 飞机
+2024-06-25 10:15:54.203 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:15:54.204 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:15:54.204 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 3(Integer), 飞机(String), 5(Integer), 0(Integer)
+2024-06-25 10:15:54.204 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:15:54.204 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:15:54.204 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:15:54.204 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:15:54.205 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:15:54.205 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:15:54.205 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:15:54.205 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:15:54.206 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:15:54.206 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:15:54.206 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:15:54.207 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:15:54.207 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:15:54.207 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:15:54.208 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:15:54.208 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:15:54.208 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:15:54.208 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:15:54.209 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:15:54.209 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:15:54.209 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:15:54.209 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:15:54.209 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:15:54.210 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE (task_id = ?)
+2024-06-25 10:15:54.210 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] ==> Parameters: 95(Integer)
+2024-06-25 10:15:54.211 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:15:54.211 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] <==        Row: 28, 95, 1, 1, 1.2714225595566096E7, 3603851.3375258516, 1.2714182121995324E7, 3603793.054288139, 1.2714259514490107E7, 3603740.5038311933, 1.2714326396889858E7, 3603803.086659036, 1.2714270024603365E7, 3603866.14718368, 1.2714225595566096E7, 3603851.3375258516, 0
+2024-06-25 10:15:54.211 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] <==        Row: 26, 95, 1, 3, 1.2714327830091428E7, 3603759.1353677716, 1.2714348730834058E7, 3603741.9967437247, 1.2714356807680117E7, 3603771.5257866345, 1.271436939271098E7, 3603772.034101716, 1.2714380858272512E7, 3603751.491654009, 1.2714390905565225E7, 3603734.920352433, 1.2714374647785833E7, 3603717.0949876355, 1.271432639688257E7, 3603703.7185113304, 1.2714327830091428E7, 3603759.1353677716, 0
+2024-06-25 10:15:54.211 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] <==        Row: 29, 95, 1, 3, 1.2714540062263196E7, 3603615.218760874, 1.2714508532010898E7, 3603596.109514738, 1.271451999757243E7, 3603535.915362253, 1.2714591179525862E7, 3603558.368724732, 1.2714540062263196E7, 3603615.218760874, 0
+2024-06-25 10:15:54.211 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] <==      Total: 3
+2024-06-25 10:17:45.295 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (username = ?)
+2024-06-25 10:17:45.296 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] ==> Parameters: wh(String)
+2024-06-25 10:17:45.297 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:17:45.297 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] <==        Row: 1, wh, $2a$10$gceq7fafa4HhBCZBR56mpubV1XOOhFq3reEbDMZu1E.H67ZzqNRLS, 0, null, null
+2024-06-25 10:17:45.297 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.S.selectList          ] <==      Total: 1
+2024-06-25 10:17:45.483 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:17:45.483 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 5(Integer), 0(Integer)
+2024-06-25 10:17:45.484 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:17:45.485 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:17:45.485 [TRACE] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:17:45.485 [DEBUG] [http-nio-1290-exec-8] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 2
+2024-06-25 10:17:45.500 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.selectCount] ==>  Preparing: SELECT COUNT( * ) FROM task
+2024-06-25 10:17:45.500 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.selectCount] ==> Parameters: 
+2024-06-25 10:17:45.501 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.selectCount] <==    Columns: count
+2024-06-25 10:17:45.501 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.selectCount] <==        Row: 1
+2024-06-25 10:17:45.501 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.selectCount] <==      Total: 1
+2024-06-25 10:17:45.501 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.getTaskInfo] ==>  Preparing: SELECT task_accepted.id, task_accepted.type_arr, sys_user.username AS username, sys_user.user_id AS userid, task.task_id, task.task_name, task.task_type, task.map_server, task.date_range, task.status, task.audit_feedback FROM task JOIN task_accepted ON task.task_id = task_accepted.task_id JOIN sys_user ON task_accepted.username = sys_user.username ORDER BY task.status, task.task_id DESC
+2024-06-25 10:17:45.501 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.getTaskInfo] ==> Parameters: 
+2024-06-25 10:17:45.502 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.getTaskInfo] <==    Columns: id, type_arr, username, userid, task_id, task_name, task_type, map_server, date_range, status, audit_feedback
+2024-06-25 10:17:45.502 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 267, 3,1, wh, 1, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:17:45.502 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 269, 1, wh1, 2, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:17:45.502 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TaskMapper.getTaskInfo] <==      Total: 2
+2024-06-25 10:17:45.503 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:17:45.503 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 3(Integer)
+2024-06-25 10:17:45.503 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:17:45.503 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.T.getTypeNameById     ] <==        Row: 飞机
+2024-06-25 10:17:45.503 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:17:45.504 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:17:45.504 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 3(Integer), 飞机(String), 5(Integer), 0(Integer)
+2024-06-25 10:17:45.506 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:17:45.506 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:17:45.506 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:17:45.506 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:17:45.506 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:17:45.508 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:17:45.508 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:17:45.508 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:17:45.508 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:17:45.508 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:17:45.509 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:17:45.509 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:17:45.509 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:17:45.509 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:17:45.509 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:17:45.510 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:17:45.510 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:17:45.510 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:17:45.510 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:17:45.510 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:17:45.511 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:17:45.511 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:17:45.512 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:17:45.512 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.MarkMapper.selectList ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE (task_id = ?)
+2024-06-25 10:17:45.513 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.MarkMapper.selectList ] ==> Parameters: 95(Integer)
+2024-06-25 10:17:45.514 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.MarkMapper.selectList ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:17:45.514 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.MarkMapper.selectList ] <==        Row: 28, 95, 1, 1, 1.2714225595566096E7, 3603851.3375258516, 1.2714182121995324E7, 3603793.054288139, 1.2714259514490107E7, 3603740.5038311933, 1.2714326396889858E7, 3603803.086659036, 1.2714270024603365E7, 3603866.14718368, 1.2714225595566096E7, 3603851.3375258516, 0
+2024-06-25 10:17:45.514 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.MarkMapper.selectList ] <==        Row: 26, 95, 1, 3, 1.2714327830091428E7, 3603759.1353677716, 1.2714348730834058E7, 3603741.9967437247, 1.2714356807680117E7, 3603771.5257866345, 1.271436939271098E7, 3603772.034101716, 1.2714380858272512E7, 3603751.491654009, 1.2714390905565225E7, 3603734.920352433, 1.2714374647785833E7, 3603717.0949876355, 1.271432639688257E7, 3603703.7185113304, 1.2714327830091428E7, 3603759.1353677716, 0
+2024-06-25 10:17:45.514 [TRACE] [http-nio-1290-exec-2] [c.e.l.m.MarkMapper.selectList ] <==        Row: 29, 95, 1, 3, 1.2714540062263196E7, 3603615.218760874, 1.2714508532010898E7, 3603596.109514738, 1.271451999757243E7, 3603535.915362253, 1.2714591179525862E7, 3603558.368724732, 1.2714540062263196E7, 3603615.218760874, 0
+2024-06-25 10:17:45.515 [DEBUG] [http-nio-1290-exec-2] [c.e.l.m.MarkMapper.selectList ] <==      Total: 3
+2024-06-25 10:19:12.431 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (username = ?)
+2024-06-25 10:19:12.431 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] ==> Parameters: wh(String)
+2024-06-25 10:19:12.432 [TRACE] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:19:12.432 [TRACE] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] <==        Row: 1, wh, $2a$10$gceq7fafa4HhBCZBR56mpubV1XOOhFq3reEbDMZu1E.H67ZzqNRLS, 0, null, null
+2024-06-25 10:19:12.432 [DEBUG] [http-nio-1290-exec-6] [c.e.l.m.S.selectList          ] <==      Total: 1
+2024-06-25 10:19:12.620 [DEBUG] [http-nio-1290-exec-5] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:19:12.621 [DEBUG] [http-nio-1290-exec-5] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 5(Integer), 0(Integer)
+2024-06-25 10:19:12.621 [TRACE] [http-nio-1290-exec-5] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:19:12.621 [TRACE] [http-nio-1290-exec-5] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:19:12.621 [TRACE] [http-nio-1290-exec-5] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:19:12.621 [DEBUG] [http-nio-1290-exec-5] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 2
+2024-06-25 10:19:12.635 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.selectCount] ==>  Preparing: SELECT COUNT( * ) FROM task
+2024-06-25 10:19:12.636 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.selectCount] ==> Parameters: 
+2024-06-25 10:19:12.636 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.selectCount] <==    Columns: count
+2024-06-25 10:19:12.636 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.selectCount] <==        Row: 1
+2024-06-25 10:19:12.636 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.selectCount] <==      Total: 1
+2024-06-25 10:19:12.636 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.getTaskInfo] ==>  Preparing: SELECT task_accepted.id, task_accepted.type_arr, sys_user.username AS username, sys_user.user_id AS userid, task.task_id, task.task_name, task.task_type, task.map_server, task.date_range, task.status, task.audit_feedback FROM task JOIN task_accepted ON task.task_id = task_accepted.task_id JOIN sys_user ON task_accepted.username = sys_user.username ORDER BY task.status, task.task_id DESC
+2024-06-25 10:19:12.637 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.getTaskInfo] ==> Parameters: 
+2024-06-25 10:19:12.637 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.getTaskInfo] <==    Columns: id, type_arr, username, userid, task_id, task_name, task_type, map_server, date_range, status, audit_feedback
+2024-06-25 10:19:12.637 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 267, 3,1, wh, 1, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:19:12.637 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 269, 1, wh1, 2, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:19:12.637 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TaskMapper.getTaskInfo] <==      Total: 2
+2024-06-25 10:19:12.638 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:19:12.638 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 3(Integer)
+2024-06-25 10:19:12.638 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:19:12.638 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==        Row: 飞机
+2024-06-25 10:19:12.638 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:19:12.639 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:19:12.639 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 3(Integer), 飞机(String), 5(Integer), 0(Integer)
+2024-06-25 10:19:12.641 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:19:12.641 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:19:12.641 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:19:12.641 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:19:12.641 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:19:12.642 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:19:12.642 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:19:12.642 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:19:12.642 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:19:12.643 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:19:12.643 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:19:12.643 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:19:12.643 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:19:12.644 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:19:12.644 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:19:12.644 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:19:12.645 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:19:12.645 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:19:12.645 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:19:12.645 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:19:12.647 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:19:12.647 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:19:12.647 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:19:12.649 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.MarkMapper.selectList ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE (task_id = ?)
+2024-06-25 10:19:12.649 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.MarkMapper.selectList ] ==> Parameters: 95(Integer)
+2024-06-25 10:19:12.650 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.MarkMapper.selectList ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:19:12.650 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.MarkMapper.selectList ] <==        Row: 28, 95, 1, 1, 1.2714225595566096E7, 3603851.3375258516, 1.2714182121995324E7, 3603793.054288139, 1.2714259514490107E7, 3603740.5038311933, 1.2714326396889858E7, 3603803.086659036, 1.2714270024603365E7, 3603866.14718368, 1.2714225595566096E7, 3603851.3375258516, 0
+2024-06-25 10:19:12.650 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.MarkMapper.selectList ] <==        Row: 26, 95, 1, 3, 1.2714327830091428E7, 3603759.1353677716, 1.2714348730834058E7, 3603741.9967437247, 1.2714356807680117E7, 3603771.5257866345, 1.271436939271098E7, 3603772.034101716, 1.2714380858272512E7, 3603751.491654009, 1.2714390905565225E7, 3603734.920352433, 1.2714374647785833E7, 3603717.0949876355, 1.271432639688257E7, 3603703.7185113304, 1.2714327830091428E7, 3603759.1353677716, 0
+2024-06-25 10:19:12.650 [TRACE] [http-nio-1290-exec-7] [c.e.l.m.MarkMapper.selectList ] <==        Row: 29, 95, 1, 3, 1.2714540062263196E7, 3603615.218760874, 1.2714508532010898E7, 3603596.109514738, 1.271451999757243E7, 3603535.915362253, 1.2714591179525862E7, 3603558.368724732, 1.2714540062263196E7, 3603615.218760874, 0
+2024-06-25 10:19:12.651 [DEBUG] [http-nio-1290-exec-7] [c.e.l.m.MarkMapper.selectList ] <==      Total: 3
+2024-06-25 10:21:13.210 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark
+2024-06-25 10:21:13.211 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] ==> Parameters: 
+2024-06-25 10:21:13.212 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:21:13.212 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] <==        Row: 28, 95, 1, 1, 1.2714225595566096E7, 3603851.3375258516, 1.2714182121995324E7, 3603793.054288139, 1.2714259514490107E7, 3603740.5038311933, 1.2714326396889858E7, 3603803.086659036, 1.2714270024603365E7, 3603866.14718368, 1.2714225595566096E7, 3603851.3375258516, 0
+2024-06-25 10:21:13.212 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] <==        Row: 26, 95, 1, 3, 1.2714327830091428E7, 3603759.1353677716, 1.2714348730834058E7, 3603741.9967437247, 1.2714356807680117E7, 3603771.5257866345, 1.271436939271098E7, 3603772.034101716, 1.2714380858272512E7, 3603751.491654009, 1.2714390905565225E7, 3603734.920352433, 1.2714374647785833E7, 3603717.0949876355, 1.271432639688257E7, 3603703.7185113304, 1.2714327830091428E7, 3603759.1353677716, 0
+2024-06-25 10:21:13.212 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] <==        Row: 29, 95, 1, 3, 1.2714540062263196E7, 3603615.218760874, 1.2714508532010898E7, 3603596.109514738, 1.271451999757243E7, 3603535.915362253, 1.2714591179525862E7, 3603558.368724732, 1.2714540062263196E7, 3603615.218760874, 0
+2024-06-25 10:21:13.212 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectList ] <==      Total: 3
+2024-06-25 10:21:13.212 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:21:13.212 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 26(Integer)
+2024-06-25 10:21:13.213 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:21:13.213 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] <==        Row: 26, 95, 1, 3, 1.2714327830091428E7, 3603759.1353677716, 1.2714348730834058E7, 3603741.9967437247, 1.2714356807680117E7, 3603771.5257866345, 1.271436939271098E7, 3603772.034101716, 1.2714380858272512E7, 3603751.491654009, 1.2714390905565225E7, 3603734.920352433, 1.2714374647785833E7, 3603717.0949876355, 1.271432639688257E7, 3603703.7185113304, 1.2714327830091428E7, 3603759.1353677716, 0
+2024-06-25 10:21:13.213 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:21:13.213 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:21:13.214 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 29(Integer)
+2024-06-25 10:21:13.214 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:21:13.214 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] <==        Row: 29, 95, 1, 3, 1.2714540062263196E7, 3603615.218760874, 1.2714508532010898E7, 3603596.109514738, 1.271451999757243E7, 3603535.915362253, 1.2714591179525862E7, 3603558.368724732, 1.2714540062263196E7, 3603615.218760874, 0
+2024-06-25 10:21:13.214 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:21:13.214 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:21:13.214 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 28(Integer)
+2024-06-25 10:21:13.215 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:21:13.215 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] <==        Row: 28, 95, 1, 1, 1.2714225595566096E7, 3603851.3375258516, 1.2714182121995324E7, 3603793.054288139, 1.2714259514490107E7, 3603740.5038311933, 1.2714326396889858E7, 3603803.086659036, 1.2714270024603365E7, 3603866.14718368, 1.2714225595566096E7, 3603851.3375258516, 0
+2024-06-25 10:21:13.215 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:21:13.215 [DEBUG] [http-nio-1290-exec-1] [c.e.l.mapper.MarkMapper.isMark] ==>  Preparing: SELECT COUNT(*) FROM mark WHERE task_id=? AND user_id=?
+2024-06-25 10:21:13.216 [DEBUG] [http-nio-1290-exec-1] [c.e.l.mapper.MarkMapper.isMark] ==> Parameters: 95(Integer), 1(Integer)
+2024-06-25 10:21:13.217 [TRACE] [http-nio-1290-exec-1] [c.e.l.mapper.MarkMapper.isMark] <==    Columns: count
+2024-06-25 10:21:13.217 [TRACE] [http-nio-1290-exec-1] [c.e.l.mapper.MarkMapper.isMark] <==        Row: 3
+2024-06-25 10:21:13.217 [DEBUG] [http-nio-1290-exec-1] [c.e.l.mapper.MarkMapper.isMark] <==      Total: 1
+2024-06-25 10:21:13.218 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] ==>  Preparing: UPDATE task SET mark_id=? WHERE task_id=?
+2024-06-25 10:21:13.218 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] ==> Parameters: null, 95(Integer)
+2024-06-25 10:21:13.230 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] <==    Updates: 1
+2024-06-25 10:21:13.231 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:21:13.231 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 26(Integer)
+2024-06-25 10:21:13.231 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:21:13.231 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] <==        Row: 26, 95, 1, 3, 1.2714327830091428E7, 3603759.1353677716, 1.2714348730834058E7, 3603741.9967437247, 1.2714356807680117E7, 3603771.5257866345, 1.271436939271098E7, 3603772.034101716, 1.2714380858272512E7, 3603751.491654009, 1.2714390905565225E7, 3603734.920352433, 1.2714374647785833E7, 3603717.0949876355, 1.271432639688257E7, 3603703.7185113304, 1.2714327830091428E7, 3603759.1353677716, 0
+2024-06-25 10:21:13.231 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:21:13.234 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.updateById ] ==>  Preparing: UPDATE mark SET task_id=?, user_id=?, type_id=?, geom=?, status=? WHERE id=?
+2024-06-25 10:21:13.235 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.updateById ] ==> Parameters: 95(Integer), 1(Integer), 3(Integer), 1.2714327830091428E7, 3603759.1353677716, 1.2714348730834058E7, 3603741.9967437247, 1.2714356807680117E7, 3603771.5257866345, 1.271436939271098E7, 3603772.034101716, 1.2714380858272512E7, 3603751.491654009, 1.2714390905565225E7, 3603734.920352433, 1.2714374647785833E7, 3603717.0949876355, 1.271432639688257E7, 3603703.7185113304, 1.2714327830091428E7, 3603759.1353677716(String), 0(Integer), 26(Integer)
+2024-06-25 10:21:13.235 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.updateById ] <==    Updates: 1
+2024-06-25 10:21:13.236 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] ==>  Preparing: SELECT task_id,task_name,task_type,map_server,date_range,status,mark_id,audit_feedback FROM task WHERE task_id=?
+2024-06-25 10:21:13.236 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] ==> Parameters: 95(Integer)
+2024-06-25 10:21:13.237 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==    Columns: task_id, task_name, task_type, map_server, date_range, status, mark_id, audit_feedback
+2024-06-25 10:21:13.237 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==        Row: 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null, null
+2024-06-25 10:21:13.237 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==      Total: 1
+2024-06-25 10:21:13.237 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] ==>  Preparing: UPDATE task SET mark_id=? WHERE task_id=?
+2024-06-25 10:21:13.237 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] ==> Parameters: 26(String), 95(Integer)
+2024-06-25 10:21:13.238 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] <==    Updates: 1
+2024-06-25 10:21:13.238 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:21:13.238 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 29(Integer)
+2024-06-25 10:21:13.238 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:21:13.238 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] <==        Row: 29, 95, 1, 3, 1.2714540062263196E7, 3603615.218760874, 1.2714508532010898E7, 3603596.109514738, 1.271451999757243E7, 3603535.915362253, 1.2714591179525862E7, 3603558.368724732, 1.2714540062263196E7, 3603615.218760874, 0
+2024-06-25 10:21:13.238 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:21:13.239 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.updateById ] ==>  Preparing: UPDATE mark SET task_id=?, user_id=?, type_id=?, geom=?, status=? WHERE id=?
+2024-06-25 10:21:13.239 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.updateById ] ==> Parameters: 95(Integer), 1(Integer), 3(Integer), 1.2714540062263196E7, 3603615.218760874, 1.2714508532010898E7, 3603596.109514738, 1.271451999757243E7, 3603535.915362253, 1.2714591179525862E7, 3603558.368724732, 1.2714540062263196E7, 3603615.218760874(String), 0(Integer), 29(Integer)
+2024-06-25 10:21:13.239 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.updateById ] <==    Updates: 1
+2024-06-25 10:21:13.240 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] ==>  Preparing: SELECT task_id,task_name,task_type,map_server,date_range,status,mark_id,audit_feedback FROM task WHERE task_id=?
+2024-06-25 10:21:13.240 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] ==> Parameters: 95(Integer)
+2024-06-25 10:21:13.241 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==    Columns: task_id, task_name, task_type, map_server, date_range, status, mark_id, audit_feedback
+2024-06-25 10:21:13.241 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==        Row: 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, 26, null
+2024-06-25 10:21:13.241 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==      Total: 1
+2024-06-25 10:21:13.242 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] ==>  Preparing: UPDATE task SET mark_id=? WHERE task_id=?
+2024-06-25 10:21:13.242 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] ==> Parameters: 26,29(String), 95(Integer)
+2024-06-25 10:21:13.243 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] <==    Updates: 1
+2024-06-25 10:21:13.246 [DEBUG] [http-nio-1290-exec-1] [c.e.l.mapper.MarkMapper.insert] ==>  Preparing: INSERT INTO mark ( task_id, user_id, type_id, geom, status ) VALUES ( ?, ?, ?, ?, ? )
+2024-06-25 10:21:13.246 [DEBUG] [http-nio-1290-exec-1] [c.e.l.mapper.MarkMapper.insert] ==> Parameters: 95(Integer), 1(Integer), 3(Integer), 1.2714595479108702E7, 3603529.5854135584, 1.2714581147187768E7, 3603499.0105949547, 1.271462844260631E7, 3603509.9984050137, 1.2714627487121586E7, 3603537.2291182093, 1.2714595479108702E7, 3603529.5854135584(String), 0(Integer)
+2024-06-25 10:21:13.248 [DEBUG] [http-nio-1290-exec-1] [c.e.l.mapper.MarkMapper.insert] <==    Updates: 1
+2024-06-25 10:21:13.248 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] ==>  Preparing: SELECT task_id,task_name,task_type,map_server,date_range,status,mark_id,audit_feedback FROM task WHERE task_id=?
+2024-06-25 10:21:13.249 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] ==> Parameters: 95(Integer)
+2024-06-25 10:21:13.249 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==    Columns: task_id, task_name, task_type, map_server, date_range, status, mark_id, audit_feedback
+2024-06-25 10:21:13.249 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==        Row: 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, 26,29, null
+2024-06-25 10:21:13.249 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==      Total: 1
+2024-06-25 10:21:13.249 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] ==>  Preparing: UPDATE task SET mark_id=? WHERE task_id=?
+2024-06-25 10:21:13.249 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] ==> Parameters: 26,29,30(String), 95(Integer)
+2024-06-25 10:21:13.250 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] <==    Updates: 1
+2024-06-25 10:21:13.250 [DEBUG] [http-nio-1290-exec-1] [c.e.l.mapper.MarkMapper.insert] ==>  Preparing: INSERT INTO mark ( task_id, user_id, type_id, geom, status ) VALUES ( ?, ?, ?, ?, ? )
+2024-06-25 10:21:13.250 [DEBUG] [http-nio-1290-exec-1] [c.e.l.mapper.MarkMapper.insert] ==> Parameters: 95(Integer), 1(Integer), 3(Integer), 1.271466522791888E7, 3603484.2009170796, 1.2714663317022333E7, 3603446.9378694356, 1.2714698669118755E7, 3603467.002574781, 1.271469198090794E7, 3603495.666442164, 1.271466522791888E7, 3603484.2009170796(String), 0(Integer)
+2024-06-25 10:21:13.251 [DEBUG] [http-nio-1290-exec-1] [c.e.l.mapper.MarkMapper.insert] <==    Updates: 1
+2024-06-25 10:21:13.251 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] ==>  Preparing: SELECT task_id,task_name,task_type,map_server,date_range,status,mark_id,audit_feedback FROM task WHERE task_id=?
+2024-06-25 10:21:13.251 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] ==> Parameters: 95(Integer)
+2024-06-25 10:21:13.252 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==    Columns: task_id, task_name, task_type, map_server, date_range, status, mark_id, audit_feedback
+2024-06-25 10:21:13.252 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==        Row: 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, 26,29,30, null
+2024-06-25 10:21:13.252 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==      Total: 1
+2024-06-25 10:21:13.253 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] ==>  Preparing: UPDATE task SET mark_id=? WHERE task_id=?
+2024-06-25 10:21:13.253 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] ==> Parameters: 26,29,30,31(String), 95(Integer)
+2024-06-25 10:21:13.254 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] <==    Updates: 1
+2024-06-25 10:21:13.254 [DEBUG] [http-nio-1290-exec-1] [c.e.l.mapper.MarkMapper.insert] ==>  Preparing: INSERT INTO mark ( task_id, user_id, type_id, geom, status ) VALUES ( ?, ?, ?, ?, ? )
+2024-06-25 10:21:13.255 [DEBUG] [http-nio-1290-exec-1] [c.e.l.mapper.MarkMapper.insert] ==> Parameters: 95(Integer), 1(Integer), 3(Integer), 1.2714720644793546E7, 3603416.363050832, 1.2714702490984749E7, 3603383.8773356793, 1.2714743575843714E7, 3603394.3874124894, 1.2714720644793546E7, 3603416.363050832(String), 0(Integer)
+2024-06-25 10:21:13.255 [DEBUG] [http-nio-1290-exec-1] [c.e.l.mapper.MarkMapper.insert] <==    Updates: 1
+2024-06-25 10:21:13.256 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] ==>  Preparing: SELECT task_id,task_name,task_type,map_server,date_range,status,mark_id,audit_feedback FROM task WHERE task_id=?
+2024-06-25 10:21:13.256 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] ==> Parameters: 95(Integer)
+2024-06-25 10:21:13.256 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==    Columns: task_id, task_name, task_type, map_server, date_range, status, mark_id, audit_feedback
+2024-06-25 10:21:13.256 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==        Row: 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, 26,29,30,31, null
+2024-06-25 10:21:13.256 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==      Total: 1
+2024-06-25 10:21:13.256 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] ==>  Preparing: UPDATE task SET mark_id=? WHERE task_id=?
+2024-06-25 10:21:13.256 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] ==> Parameters: 26,29,30,31,32(String), 95(Integer)
+2024-06-25 10:21:13.258 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] <==    Updates: 1
+2024-06-25 10:21:13.259 [DEBUG] [http-nio-1290-exec-1] [c.e.l.mapper.MarkMapper.insert] ==>  Preparing: INSERT INTO mark ( task_id, user_id, type_id, geom, status ) VALUES ( ?, ?, ?, ?, ? )
+2024-06-25 10:21:13.260 [DEBUG] [http-nio-1290-exec-1] [c.e.l.mapper.MarkMapper.insert] ==> Parameters: 95(Integer), 1(Integer), 3(Integer), 1.2714784660775576E7, 3603374.3227071436, 1.2714756952338243E7, 3603334.1932600043, 1.2714813324661184E7, 3603346.614269811, 1.2714801157742202E7, 3603358.3756310144, 1.2714784660775576E7, 3603374.3227071436(String), 0(Integer)
+2024-06-25 10:21:13.260 [DEBUG] [http-nio-1290-exec-1] [c.e.l.mapper.MarkMapper.insert] <==    Updates: 1
+2024-06-25 10:21:13.261 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] ==>  Preparing: SELECT task_id,task_name,task_type,map_server,date_range,status,mark_id,audit_feedback FROM task WHERE task_id=?
+2024-06-25 10:21:13.261 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] ==> Parameters: 95(Integer)
+2024-06-25 10:21:13.261 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==    Columns: task_id, task_name, task_type, map_server, date_range, status, mark_id, audit_feedback
+2024-06-25 10:21:13.261 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==        Row: 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, 26,29,30,31,32, null
+2024-06-25 10:21:13.261 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==      Total: 1
+2024-06-25 10:21:13.262 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] ==>  Preparing: UPDATE task SET mark_id=? WHERE task_id=?
+2024-06-25 10:21:13.262 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] ==> Parameters: 26,29,30,31,32,33(String), 95(Integer)
+2024-06-25 10:21:13.262 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] <==    Updates: 1
+2024-06-25 10:21:13.263 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:21:13.263 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 28(Integer)
+2024-06-25 10:21:13.263 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:21:13.263 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] <==        Row: 28, 95, 1, 1, 1.2714225595566096E7, 3603851.3375258516, 1.2714182121995324E7, 3603793.054288139, 1.2714259514490107E7, 3603740.5038311933, 1.2714326396889858E7, 3603803.086659036, 1.2714270024603365E7, 3603866.14718368, 1.2714225595566096E7, 3603851.3375258516, 0
+2024-06-25 10:21:13.263 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:21:13.264 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.updateById ] ==>  Preparing: UPDATE mark SET task_id=?, user_id=?, type_id=?, geom=?, status=? WHERE id=?
+2024-06-25 10:21:13.264 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.updateById ] ==> Parameters: 95(Integer), 1(Integer), 1(Integer), 1.2714225595566096E7, 3603851.3375258516, 1.2714182121995324E7, 3603793.054288139, 1.2714259514490107E7, 3603740.5038311933, 1.2714326396889858E7, 3603803.086659036, 1.2714270024603365E7, 3603866.14718368, 1.2714225595566096E7, 3603851.3375258516(String), 0(Integer), 28(Integer)
+2024-06-25 10:21:13.264 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.MarkMapper.updateById ] <==    Updates: 1
+2024-06-25 10:21:13.266 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] ==>  Preparing: SELECT task_id,task_name,task_type,map_server,date_range,status,mark_id,audit_feedback FROM task WHERE task_id=?
+2024-06-25 10:21:13.266 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] ==> Parameters: 95(Integer)
+2024-06-25 10:21:13.267 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==    Columns: task_id, task_name, task_type, map_server, date_range, status, mark_id, audit_feedback
+2024-06-25 10:21:13.267 [TRACE] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==        Row: 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, 26,29,30,31,32,33, null
+2024-06-25 10:21:13.267 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.selectById ] <==      Total: 1
+2024-06-25 10:21:13.267 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] ==>  Preparing: UPDATE task SET mark_id=? WHERE task_id=?
+2024-06-25 10:21:13.267 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] ==> Parameters: 26,29,30,31,32,33,28(String), 95(Integer)
+2024-06-25 10:21:13.268 [DEBUG] [http-nio-1290-exec-1] [c.e.l.m.TaskMapper.updateTask ] <==    Updates: 1
+2024-06-25 10:21:16.436 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.S.selectList          ] ==>  Preparing: SELECT user_id,username,user_password,is_admin,finished_num,unfinished_num FROM sys_user WHERE (username = ?)
+2024-06-25 10:21:16.437 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.S.selectList          ] ==> Parameters: wh(String)
+2024-06-25 10:21:16.437 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.S.selectList          ] <==    Columns: user_id, username, user_password, is_admin, finished_num, unfinished_num
+2024-06-25 10:21:16.437 [TRACE] [http-nio-1290-exec-4] [c.e.l.m.S.selectList          ] <==        Row: 1, wh, $2a$10$gceq7fafa4HhBCZBR56mpubV1XOOhFq3reEbDMZu1E.H67ZzqNRLS, 0, null, null
+2024-06-25 10:21:16.437 [DEBUG] [http-nio-1290-exec-4] [c.e.l.m.S.selectList          ] <==      Total: 1
+2024-06-25 10:21:16.625 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:21:16.626 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 5(Integer), 0(Integer)
+2024-06-25 10:21:16.626 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:21:16.626 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:21:16.626 [TRACE] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:21:16.626 [DEBUG] [http-nio-1290-exec-9] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 2
+2024-06-25 10:21:16.639 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.selectCount] ==>  Preparing: SELECT COUNT( * ) FROM task
+2024-06-25 10:21:16.639 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.selectCount] ==> Parameters: 
+2024-06-25 10:21:16.640 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.selectCount] <==    Columns: count
+2024-06-25 10:21:16.640 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.selectCount] <==        Row: 1
+2024-06-25 10:21:16.641 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.selectCount] <==      Total: 1
+2024-06-25 10:21:16.641 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.getTaskInfo] ==>  Preparing: SELECT task_accepted.id, task_accepted.type_arr, sys_user.username AS username, sys_user.user_id AS userid, task.task_id, task.task_name, task.task_type, task.map_server, task.date_range, task.status, task.audit_feedback FROM task JOIN task_accepted ON task.task_id = task_accepted.task_id JOIN sys_user ON task_accepted.username = sys_user.username ORDER BY task.status, task.task_id DESC
+2024-06-25 10:21:16.641 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.getTaskInfo] ==> Parameters: 
+2024-06-25 10:21:16.642 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.getTaskInfo] <==    Columns: id, type_arr, username, userid, task_id, task_name, task_type, map_server, date_range, status, audit_feedback
+2024-06-25 10:21:16.642 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 267, 3,1, wh, 1, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:21:16.642 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.getTaskInfo] <==        Row: 269, 1, wh1, 2, 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null
+2024-06-25 10:21:16.642 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TaskMapper.getTaskInfo] <==      Total: 2
+2024-06-25 10:21:16.643 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:21:16.643 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 3(Integer)
+2024-06-25 10:21:16.644 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:21:16.644 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==        Row: 飞机
+2024-06-25 10:21:16.644 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:21:16.644 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:21:16.644 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 3(Integer), 飞机(String), 5(Integer), 0(Integer)
+2024-06-25 10:21:16.645 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:21:16.645 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 3, 飞机, #2b239f
+2024-06-25 10:21:16.646 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:21:16.646 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:21:16.646 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:21:16.646 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:21:16.647 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:21:16.647 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:21:16.648 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:21:16.649 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:21:16.649 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:21:16.649 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:21:16.649 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:21:16.650 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] ==>  Preparing: SELECT type_name FROM type WHERE type_id = ?
+2024-06-25 10:21:16.650 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] ==> Parameters: 1(Integer)
+2024-06-25 10:21:16.650 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==    Columns: type_name
+2024-06-25 10:21:16.651 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==        Row: 建筑
+2024-06-25 10:21:16.651 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.T.getTypeNameById     ] <==      Total: 1
+2024-06-25 10:21:16.651 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] ==>  Preparing: SELECT * FROM type WHERE type_id = ? AND type_name like concat('%',?,'%') ORDER BY type_id ASC LIMIT ? OFFSET ?
+2024-06-25 10:21:16.651 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] ==> Parameters: 1(Integer), 建筑(String), 5(Integer), 0(Integer)
+2024-06-25 10:21:16.653 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==    Columns: type_id, type_name, type_color
+2024-06-25 10:21:16.653 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==        Row: 1, 建筑, #b90e0e
+2024-06-25 10:21:16.653 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.TypeMapper.getTypes   ] <==      Total: 1
+2024-06-25 10:21:16.654 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE (task_id = ?)
+2024-06-25 10:21:16.654 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] ==> Parameters: 95(Integer)
+2024-06-25 10:21:16.656 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:21:16.656 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] <==        Row: 26, 95, 1, 3, 1.2714327830091428E7, 3603759.1353677716, 1.2714348730834058E7, 3603741.9967437247, 1.2714356807680117E7, 3603771.5257866345, 1.271436939271098E7, 3603772.034101716, 1.2714380858272512E7, 3603751.491654009, 1.2714390905565225E7, 3603734.920352433, 1.2714374647785833E7, 3603717.0949876355, 1.271432639688257E7, 3603703.7185113304, 1.2714327830091428E7, 3603759.1353677716, 0
+2024-06-25 10:21:16.656 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] <==        Row: 29, 95, 1, 3, 1.2714540062263196E7, 3603615.218760874, 1.2714508532010898E7, 3603596.109514738, 1.271451999757243E7, 3603535.915362253, 1.2714591179525862E7, 3603558.368724732, 1.2714540062263196E7, 3603615.218760874, 0
+2024-06-25 10:21:16.656 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] <==        Row: 30, 95, 1, 3, 1.2714595479108702E7, 3603529.5854135584, 1.2714581147187768E7, 3603499.0105949547, 1.271462844260631E7, 3603509.9984050137, 1.2714627487121586E7, 3603537.2291182093, 1.2714595479108702E7, 3603529.5854135584, 0
+2024-06-25 10:21:16.656 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] <==        Row: 31, 95, 1, 3, 1.271466522791888E7, 3603484.2009170796, 1.2714663317022333E7, 3603446.9378694356, 1.2714698669118755E7, 3603467.002574781, 1.271469198090794E7, 3603495.666442164, 1.271466522791888E7, 3603484.2009170796, 0
+2024-06-25 10:21:16.656 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] <==        Row: 32, 95, 1, 3, 1.2714720644793546E7, 3603416.363050832, 1.2714702490984749E7, 3603383.8773356793, 1.2714743575843714E7, 3603394.3874124894, 1.2714720644793546E7, 3603416.363050832, 0
+2024-06-25 10:21:16.656 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] <==        Row: 33, 95, 1, 3, 1.2714784660775576E7, 3603374.3227071436, 1.2714756952338243E7, 3603334.1932600043, 1.2714813324661184E7, 3603346.614269811, 1.2714801157742202E7, 3603358.3756310144, 1.2714784660775576E7, 3603374.3227071436, 0
+2024-06-25 10:21:16.657 [TRACE] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] <==        Row: 28, 95, 1, 1, 1.2714225595566096E7, 3603851.3375258516, 1.2714182121995324E7, 3603793.054288139, 1.2714259514490107E7, 3603740.5038311933, 1.2714326396889858E7, 3603803.086659036, 1.2714270024603365E7, 3603866.14718368, 1.2714225595566096E7, 3603851.3375258516, 0
+2024-06-25 10:21:16.657 [DEBUG] [http-nio-1290-exec-10] [c.e.l.m.MarkMapper.selectList ] <==      Total: 7
+2024-06-25 10:24:14.483 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark
+2024-06-25 10:24:14.484 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] ==> Parameters: 
+2024-06-25 10:24:14.484 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:24:14.484 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] <==        Row: 26, 95, 1, 3, 1.2714327830091428E7, 3603759.1353677716, 1.2714348730834058E7, 3603741.9967437247, 1.2714356807680117E7, 3603771.5257866345, 1.271436939271098E7, 3603772.034101716, 1.2714380858272512E7, 3603751.491654009, 1.2714390905565225E7, 3603734.920352433, 1.2714374647785833E7, 3603717.0949876355, 1.271432639688257E7, 3603703.7185113304, 1.2714327830091428E7, 3603759.1353677716, 0
+2024-06-25 10:24:14.484 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] <==        Row: 29, 95, 1, 3, 1.2714540062263196E7, 3603615.218760874, 1.2714508532010898E7, 3603596.109514738, 1.271451999757243E7, 3603535.915362253, 1.2714591179525862E7, 3603558.368724732, 1.2714540062263196E7, 3603615.218760874, 0
+2024-06-25 10:24:14.484 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] <==        Row: 30, 95, 1, 3, 1.2714595479108702E7, 3603529.5854135584, 1.2714581147187768E7, 3603499.0105949547, 1.271462844260631E7, 3603509.9984050137, 1.2714627487121586E7, 3603537.2291182093, 1.2714595479108702E7, 3603529.5854135584, 0
+2024-06-25 10:24:14.484 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] <==        Row: 31, 95, 1, 3, 1.271466522791888E7, 3603484.2009170796, 1.2714663317022333E7, 3603446.9378694356, 1.2714698669118755E7, 3603467.002574781, 1.271469198090794E7, 3603495.666442164, 1.271466522791888E7, 3603484.2009170796, 0
+2024-06-25 10:24:14.484 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] <==        Row: 32, 95, 1, 3, 1.2714720644793546E7, 3603416.363050832, 1.2714702490984749E7, 3603383.8773356793, 1.2714743575843714E7, 3603394.3874124894, 1.2714720644793546E7, 3603416.363050832, 0
+2024-06-25 10:24:14.485 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] <==        Row: 33, 95, 1, 3, 1.2714784660775576E7, 3603374.3227071436, 1.2714756952338243E7, 3603334.1932600043, 1.2714813324661184E7, 3603346.614269811, 1.2714801157742202E7, 3603358.3756310144, 1.2714784660775576E7, 3603374.3227071436, 0
+2024-06-25 10:24:14.485 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] <==        Row: 28, 95, 1, 1, 1.2714225595566096E7, 3603851.3375258516, 1.2714182121995324E7, 3603793.054288139, 1.2714259514490107E7, 3603740.5038311933, 1.2714326396889858E7, 3603803.086659036, 1.2714270024603365E7, 3603866.14718368, 1.2714225595566096E7, 3603851.3375258516, 0
+2024-06-25 10:24:14.485 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectList ] <==      Total: 7
+2024-06-25 10:24:14.485 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:24:14.485 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 26(Integer)
+2024-06-25 10:24:14.486 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:24:14.486 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==        Row: 26, 95, 1, 3, 1.2714327830091428E7, 3603759.1353677716, 1.2714348730834058E7, 3603741.9967437247, 1.2714356807680117E7, 3603771.5257866345, 1.271436939271098E7, 3603772.034101716, 1.2714380858272512E7, 3603751.491654009, 1.2714390905565225E7, 3603734.920352433, 1.2714374647785833E7, 3603717.0949876355, 1.271432639688257E7, 3603703.7185113304, 1.2714327830091428E7, 3603759.1353677716, 0
+2024-06-25 10:24:14.486 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.487 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:24:14.487 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 29(Integer)
+2024-06-25 10:24:14.488 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:24:14.488 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==        Row: 29, 95, 1, 3, 1.2714540062263196E7, 3603615.218760874, 1.2714508532010898E7, 3603596.109514738, 1.271451999757243E7, 3603535.915362253, 1.2714591179525862E7, 3603558.368724732, 1.2714540062263196E7, 3603615.218760874, 0
+2024-06-25 10:24:14.488 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.488 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:24:14.489 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 31(Integer)
+2024-06-25 10:24:14.490 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:24:14.490 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==        Row: 31, 95, 1, 3, 1.271466522791888E7, 3603484.2009170796, 1.2714663317022333E7, 3603446.9378694356, 1.2714698669118755E7, 3603467.002574781, 1.271469198090794E7, 3603495.666442164, 1.271466522791888E7, 3603484.2009170796, 0
+2024-06-25 10:24:14.490 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.490 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:24:14.490 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 32(Integer)
+2024-06-25 10:24:14.490 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:24:14.490 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==        Row: 32, 95, 1, 3, 1.2714720644793546E7, 3603416.363050832, 1.2714702490984749E7, 3603383.8773356793, 1.2714743575843714E7, 3603394.3874124894, 1.2714720644793546E7, 3603416.363050832, 0
+2024-06-25 10:24:14.490 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.491 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:24:14.491 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 33(Integer)
+2024-06-25 10:24:14.491 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:24:14.491 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==        Row: 33, 95, 1, 3, 1.2714784660775576E7, 3603374.3227071436, 1.2714756952338243E7, 3603334.1932600043, 1.2714813324661184E7, 3603346.614269811, 1.2714801157742202E7, 3603358.3756310144, 1.2714784660775576E7, 3603374.3227071436, 0
+2024-06-25 10:24:14.491 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.492 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:24:14.492 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 30(Integer)
+2024-06-25 10:24:14.493 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:24:14.493 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==        Row: 30, 95, 1, 3, 1.2714595479108702E7, 3603529.5854135584, 1.2714581147187768E7, 3603499.0105949547, 1.271462844260631E7, 3603509.9984050137, 1.2714627487121586E7, 3603537.2291182093, 1.2714595479108702E7, 3603529.5854135584, 0
+2024-06-25 10:24:14.494 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.494 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:24:14.494 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 28(Integer)
+2024-06-25 10:24:14.494 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:24:14.494 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==        Row: 28, 95, 1, 1, 1.2714225595566096E7, 3603851.3375258516, 1.2714182121995324E7, 3603793.054288139, 1.2714259514490107E7, 3603740.5038311933, 1.2714326396889858E7, 3603803.086659036, 1.2714270024603365E7, 3603866.14718368, 1.2714225595566096E7, 3603851.3375258516, 0
+2024-06-25 10:24:14.494 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.495 [DEBUG] [http-nio-1290-exec-3] [c.e.l.mapper.MarkMapper.isMark] ==>  Preparing: SELECT COUNT(*) FROM mark WHERE task_id=? AND user_id=?
+2024-06-25 10:24:14.495 [DEBUG] [http-nio-1290-exec-3] [c.e.l.mapper.MarkMapper.isMark] ==> Parameters: 95(Integer), 1(Integer)
+2024-06-25 10:24:14.495 [TRACE] [http-nio-1290-exec-3] [c.e.l.mapper.MarkMapper.isMark] <==    Columns: count
+2024-06-25 10:24:14.495 [TRACE] [http-nio-1290-exec-3] [c.e.l.mapper.MarkMapper.isMark] <==        Row: 7
+2024-06-25 10:24:14.495 [DEBUG] [http-nio-1290-exec-3] [c.e.l.mapper.MarkMapper.isMark] <==      Total: 1
+2024-06-25 10:24:14.495 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==>  Preparing: UPDATE task SET mark_id=? WHERE task_id=?
+2024-06-25 10:24:14.495 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==> Parameters: null, 95(Integer)
+2024-06-25 10:24:14.507 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] <==    Updates: 1
+2024-06-25 10:24:14.508 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:24:14.508 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 26(Integer)
+2024-06-25 10:24:14.508 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:24:14.508 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==        Row: 26, 95, 1, 3, 1.2714327830091428E7, 3603759.1353677716, 1.2714348730834058E7, 3603741.9967437247, 1.2714356807680117E7, 3603771.5257866345, 1.271436939271098E7, 3603772.034101716, 1.2714380858272512E7, 3603751.491654009, 1.2714390905565225E7, 3603734.920352433, 1.2714374647785833E7, 3603717.0949876355, 1.271432639688257E7, 3603703.7185113304, 1.2714327830091428E7, 3603759.1353677716, 0
+2024-06-25 10:24:14.508 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.509 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] ==>  Preparing: UPDATE mark SET task_id=?, user_id=?, type_id=?, geom=?, status=? WHERE id=?
+2024-06-25 10:24:14.509 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] ==> Parameters: 95(Integer), 1(Integer), 3(Integer), 1.2714327830091428E7, 3603759.1353677716, 1.2714348730834058E7, 3603741.9967437247, 1.2714356807680117E7, 3603771.5257866345, 1.271436939271098E7, 3603772.034101716, 1.2714380858272512E7, 3603751.491654009, 1.2714390905565225E7, 3603734.920352433, 1.2714374647785833E7, 3603717.0949876355, 1.271432639688257E7, 3603703.7185113304, 1.2714327830091428E7, 3603759.1353677716(String), 0(Integer), 26(Integer)
+2024-06-25 10:24:14.511 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] <==    Updates: 1
+2024-06-25 10:24:14.511 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] ==>  Preparing: SELECT task_id,task_name,task_type,map_server,date_range,status,mark_id,audit_feedback FROM task WHERE task_id=?
+2024-06-25 10:24:14.511 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] ==> Parameters: 95(Integer)
+2024-06-25 10:24:14.512 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==    Columns: task_id, task_name, task_type, map_server, date_range, status, mark_id, audit_feedback
+2024-06-25 10:24:14.512 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==        Row: 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, null, null
+2024-06-25 10:24:14.512 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.512 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==>  Preparing: UPDATE task SET mark_id=? WHERE task_id=?
+2024-06-25 10:24:14.512 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==> Parameters: 26(String), 95(Integer)
+2024-06-25 10:24:14.513 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] <==    Updates: 1
+2024-06-25 10:24:14.513 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:24:14.513 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 29(Integer)
+2024-06-25 10:24:14.513 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:24:14.513 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==        Row: 29, 95, 1, 3, 1.2714540062263196E7, 3603615.218760874, 1.2714508532010898E7, 3603596.109514738, 1.271451999757243E7, 3603535.915362253, 1.2714591179525862E7, 3603558.368724732, 1.2714540062263196E7, 3603615.218760874, 0
+2024-06-25 10:24:14.513 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.514 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] ==>  Preparing: UPDATE mark SET task_id=?, user_id=?, type_id=?, geom=?, status=? WHERE id=?
+2024-06-25 10:24:14.514 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] ==> Parameters: 95(Integer), 1(Integer), 3(Integer), 1.2714540062263196E7, 3603615.218760874, 1.2714508532010898E7, 3603596.109514738, 1.271451999757243E7, 3603535.915362253, 1.2714591179525862E7, 3603558.368724732, 1.2714569606416756E7, 3603582.361246404, 1.2714586879979469E7, 3603604.589240273, 1.2714557764559945E7, 3603611.1996214767, 1.2714540062263196E7, 3603615.218760874(String), 0(Integer), 29(Integer)
+2024-06-25 10:24:14.514 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] <==    Updates: 1
+2024-06-25 10:24:14.514 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] ==>  Preparing: SELECT task_id,task_name,task_type,map_server,date_range,status,mark_id,audit_feedback FROM task WHERE task_id=?
+2024-06-25 10:24:14.514 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] ==> Parameters: 95(Integer)
+2024-06-25 10:24:14.515 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==    Columns: task_id, task_name, task_type, map_server, date_range, status, mark_id, audit_feedback
+2024-06-25 10:24:14.515 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==        Row: 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, 26, null
+2024-06-25 10:24:14.515 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.515 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==>  Preparing: UPDATE task SET mark_id=? WHERE task_id=?
+2024-06-25 10:24:14.515 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==> Parameters: 26,29(String), 95(Integer)
+2024-06-25 10:24:14.515 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] <==    Updates: 1
+2024-06-25 10:24:14.515 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:24:14.516 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 31(Integer)
+2024-06-25 10:24:14.516 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:24:14.516 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==        Row: 31, 95, 1, 3, 1.271466522791888E7, 3603484.2009170796, 1.2714663317022333E7, 3603446.9378694356, 1.2714698669118755E7, 3603467.002574781, 1.271469198090794E7, 3603495.666442164, 1.271466522791888E7, 3603484.2009170796, 0
+2024-06-25 10:24:14.516 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.516 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] ==>  Preparing: UPDATE mark SET task_id=?, user_id=?, type_id=?, geom=?, status=? WHERE id=?
+2024-06-25 10:24:14.517 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] ==> Parameters: 95(Integer), 1(Integer), 3(Integer), 1.271466522791888E7, 3603484.2009170796, 1.2714663317022333E7, 3603446.9378694356, 1.2714698669118755E7, 3603467.002574781, 1.271469198090794E7, 3603495.666442164, 1.271466522791888E7, 3603484.2009170796(String), 0(Integer), 31(Integer)
+2024-06-25 10:24:14.517 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] <==    Updates: 1
+2024-06-25 10:24:14.518 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] ==>  Preparing: SELECT task_id,task_name,task_type,map_server,date_range,status,mark_id,audit_feedback FROM task WHERE task_id=?
+2024-06-25 10:24:14.518 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] ==> Parameters: 95(Integer)
+2024-06-25 10:24:14.519 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==    Columns: task_id, task_name, task_type, map_server, date_range, status, mark_id, audit_feedback
+2024-06-25 10:24:14.519 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==        Row: 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, 26,29, null
+2024-06-25 10:24:14.519 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.519 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==>  Preparing: UPDATE task SET mark_id=? WHERE task_id=?
+2024-06-25 10:24:14.519 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==> Parameters: 26,29,31(String), 95(Integer)
+2024-06-25 10:24:14.519 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] <==    Updates: 1
+2024-06-25 10:24:14.520 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:24:14.520 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 32(Integer)
+2024-06-25 10:24:14.520 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:24:14.520 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==        Row: 32, 95, 1, 3, 1.2714720644793546E7, 3603416.363050832, 1.2714702490984749E7, 3603383.8773356793, 1.2714743575843714E7, 3603394.3874124894, 1.2714720644793546E7, 3603416.363050832, 0
+2024-06-25 10:24:14.520 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.520 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] ==>  Preparing: UPDATE mark SET task_id=?, user_id=?, type_id=?, geom=?, status=? WHERE id=?
+2024-06-25 10:24:14.521 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] ==> Parameters: 95(Integer), 1(Integer), 3(Integer), 1.2714720644793546E7, 3603416.363050832, 1.2714702490984749E7, 3603383.8773356793, 1.2714743575843714E7, 3603394.3874124894, 1.2714720644793546E7, 3603416.363050832(String), 0(Integer), 32(Integer)
+2024-06-25 10:24:14.521 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] <==    Updates: 1
+2024-06-25 10:24:14.521 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] ==>  Preparing: SELECT task_id,task_name,task_type,map_server,date_range,status,mark_id,audit_feedback FROM task WHERE task_id=?
+2024-06-25 10:24:14.521 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] ==> Parameters: 95(Integer)
+2024-06-25 10:24:14.521 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==    Columns: task_id, task_name, task_type, map_server, date_range, status, mark_id, audit_feedback
+2024-06-25 10:24:14.521 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==        Row: 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, 26,29,31, null
+2024-06-25 10:24:14.521 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.521 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==>  Preparing: UPDATE task SET mark_id=? WHERE task_id=?
+2024-06-25 10:24:14.521 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==> Parameters: 26,29,31,32(String), 95(Integer)
+2024-06-25 10:24:14.522 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] <==    Updates: 1
+2024-06-25 10:24:14.522 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:24:14.522 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 33(Integer)
+2024-06-25 10:24:14.523 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:24:14.523 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==        Row: 33, 95, 1, 3, 1.2714784660775576E7, 3603374.3227071436, 1.2714756952338243E7, 3603334.1932600043, 1.2714813324661184E7, 3603346.614269811, 1.2714801157742202E7, 3603358.3756310144, 1.2714784660775576E7, 3603374.3227071436, 0
+2024-06-25 10:24:14.523 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.523 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] ==>  Preparing: UPDATE mark SET task_id=?, user_id=?, type_id=?, geom=?, status=? WHERE id=?
+2024-06-25 10:24:14.524 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] ==> Parameters: 95(Integer), 1(Integer), 3(Integer), 1.2714784660775576E7, 3603374.3227071436, 1.2714756952338243E7, 3603334.1932600043, 1.2714813324661184E7, 3603346.614269811, 1.2714801157742202E7, 3603358.3756310144, 1.2714784660775576E7, 3603374.3227071436(String), 0(Integer), 33(Integer)
+2024-06-25 10:24:14.524 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] <==    Updates: 1
+2024-06-25 10:24:14.524 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] ==>  Preparing: SELECT task_id,task_name,task_type,map_server,date_range,status,mark_id,audit_feedback FROM task WHERE task_id=?
+2024-06-25 10:24:14.525 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] ==> Parameters: 95(Integer)
+2024-06-25 10:24:14.525 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==    Columns: task_id, task_name, task_type, map_server, date_range, status, mark_id, audit_feedback
+2024-06-25 10:24:14.525 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==        Row: 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, 26,29,31,32, null
+2024-06-25 10:24:14.525 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.525 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==>  Preparing: UPDATE task SET mark_id=? WHERE task_id=?
+2024-06-25 10:24:14.525 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==> Parameters: 26,29,31,32,33(String), 95(Integer)
+2024-06-25 10:24:14.526 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] <==    Updates: 1
+2024-06-25 10:24:14.526 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:24:14.527 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 30(Integer)
+2024-06-25 10:24:14.527 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:24:14.527 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==        Row: 30, 95, 1, 3, 1.2714595479108702E7, 3603529.5854135584, 1.2714581147187768E7, 3603499.0105949547, 1.271462844260631E7, 3603509.9984050137, 1.2714627487121586E7, 3603537.2291182093, 1.2714595479108702E7, 3603529.5854135584, 0
+2024-06-25 10:24:14.528 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.528 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] ==>  Preparing: UPDATE mark SET task_id=?, user_id=?, type_id=?, geom=?, status=? WHERE id=?
+2024-06-25 10:24:14.528 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] ==> Parameters: 95(Integer), 1(Integer), 3(Integer), 1.2714595479108702E7, 3603529.5854135584, 1.2714581147187768E7, 3603499.0105949547, 1.271460312284798E7, 3603489.933683267, 1.271462844260631E7, 3603509.9984050137, 1.2714627487121586E7, 3603537.2291182093, 1.2714611169489698E7, 3603533.332370254, 1.2714595479108702E7, 3603529.5854135584(String), 0(Integer), 30(Integer)
+2024-06-25 10:24:14.529 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] <==    Updates: 1
+2024-06-25 10:24:14.529 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] ==>  Preparing: SELECT task_id,task_name,task_type,map_server,date_range,status,mark_id,audit_feedback FROM task WHERE task_id=?
+2024-06-25 10:24:14.529 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] ==> Parameters: 95(Integer)
+2024-06-25 10:24:14.529 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==    Columns: task_id, task_name, task_type, map_server, date_range, status, mark_id, audit_feedback
+2024-06-25 10:24:14.529 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==        Row: 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, 26,29,31,32,33, null
+2024-06-25 10:24:14.529 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.531 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==>  Preparing: UPDATE task SET mark_id=? WHERE task_id=?
+2024-06-25 10:24:14.531 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==> Parameters: 26,29,31,32,33,30(String), 95(Integer)
+2024-06-25 10:24:14.531 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] <==    Updates: 1
+2024-06-25 10:24:14.531 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==>  Preparing: SELECT id,task_id,user_id,type_id,geom,status FROM mark WHERE id=?
+2024-06-25 10:24:14.531 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] ==> Parameters: 28(Integer)
+2024-06-25 10:24:14.532 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==    Columns: id, task_id, user_id, type_id, geom, status
+2024-06-25 10:24:14.532 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==        Row: 28, 95, 1, 1, 1.2714225595566096E7, 3603851.3375258516, 1.2714182121995324E7, 3603793.054288139, 1.2714259514490107E7, 3603740.5038311933, 1.2714326396889858E7, 3603803.086659036, 1.2714270024603365E7, 3603866.14718368, 1.2714225595566096E7, 3603851.3375258516, 0
+2024-06-25 10:24:14.532 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.532 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] ==>  Preparing: UPDATE mark SET task_id=?, user_id=?, type_id=?, geom=?, status=? WHERE id=?
+2024-06-25 10:24:14.533 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] ==> Parameters: 95(Integer), 1(Integer), 1(Integer), 1.2714225595566096E7, 3603851.3375258516, 1.2714182121995324E7, 3603793.054288139, 1.2714259514490107E7, 3603740.5038311933, 1.2714326396889858E7, 3603803.086659036, 1.2714270024603365E7, 3603866.14718368, 1.2714225595566096E7, 3603851.3375258516(String), 0(Integer), 28(Integer)
+2024-06-25 10:24:14.533 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.MarkMapper.updateById ] <==    Updates: 1
+2024-06-25 10:24:14.533 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] ==>  Preparing: SELECT task_id,task_name,task_type,map_server,date_range,status,mark_id,audit_feedback FROM task WHERE task_id=?
+2024-06-25 10:24:14.533 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] ==> Parameters: 95(Integer)
+2024-06-25 10:24:14.534 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==    Columns: task_id, task_name, task_type, map_server, date_range, status, mark_id, audit_feedback
+2024-06-25 10:24:14.534 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==        Row: 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, 26,29,31,32,33,30, null
+2024-06-25 10:24:14.534 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.534 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==>  Preparing: UPDATE task SET mark_id=? WHERE task_id=?
+2024-06-25 10:24:14.534 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==> Parameters: 26,29,31,32,33,30,28(String), 95(Integer)
+2024-06-25 10:24:14.534 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] <==    Updates: 1
+2024-06-25 10:24:14.534 [DEBUG] [http-nio-1290-exec-3] [c.e.l.mapper.MarkMapper.insert] ==>  Preparing: INSERT INTO mark ( task_id, user_id, type_id, geom, status ) VALUES ( ?, ?, ?, ?, ? )
+2024-06-25 10:24:14.534 [DEBUG] [http-nio-1290-exec-3] [c.e.l.mapper.MarkMapper.insert] ==> Parameters: 95(Integer), 1(Integer), 1(Integer), 1.2714102460289018E7, 3603929.446597729, 1.271407666278468E7, 3603892.1835683086, 1.2714119658613091E7, 3603908.4264349965, 1.2714102460289018E7, 3603929.446597729(String), 0(Integer)
+2024-06-25 10:24:14.535 [DEBUG] [http-nio-1290-exec-3] [c.e.l.mapper.MarkMapper.insert] <==    Updates: 1
+2024-06-25 10:24:14.535 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] ==>  Preparing: SELECT task_id,task_name,task_type,map_server,date_range,status,mark_id,audit_feedback FROM task WHERE task_id=?
+2024-06-25 10:24:14.535 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] ==> Parameters: 95(Integer)
+2024-06-25 10:24:14.537 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==    Columns: task_id, task_name, task_type, map_server, date_range, status, mark_id, audit_feedback
+2024-06-25 10:24:14.537 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==        Row: 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, 26,29,31,32,33,30,28, null
+2024-06-25 10:24:14.537 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.537 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==>  Preparing: UPDATE task SET mark_id=? WHERE task_id=?
+2024-06-25 10:24:14.537 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==> Parameters: 26,29,31,32,33,30,28,34(String), 95(Integer)
+2024-06-25 10:24:14.537 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] <==    Updates: 1
+2024-06-25 10:24:14.538 [DEBUG] [http-nio-1290-exec-3] [c.e.l.mapper.MarkMapper.insert] ==>  Preparing: INSERT INTO mark ( task_id, user_id, type_id, geom, status ) VALUES ( ?, ?, ?, ?, ? )
+2024-06-25 10:24:14.538 [DEBUG] [http-nio-1290-exec-3] [c.e.l.mapper.MarkMapper.insert] ==> Parameters: 95(Integer), 1(Integer), 1(Integer), 1.2714138767879276E7, 3603888.361711427, 1.2714127302317742E7, 3603853.0095785554, 1.2714154055288577E7, 3603849.187730786, 1.2714162654450614E7, 3603884.5398636577, 1.2714138767879276E7, 3603888.361711427(String), 0(Integer)
+2024-06-25 10:24:14.538 [DEBUG] [http-nio-1290-exec-3] [c.e.l.mapper.MarkMapper.insert] <==    Updates: 1
+2024-06-25 10:24:14.539 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] ==>  Preparing: SELECT task_id,task_name,task_type,map_server,date_range,status,mark_id,audit_feedback FROM task WHERE task_id=?
+2024-06-25 10:24:14.539 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] ==> Parameters: 95(Integer)
+2024-06-25 10:24:14.539 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==    Columns: task_id, task_name, task_type, map_server, date_range, status, mark_id, audit_feedback
+2024-06-25 10:24:14.539 [TRACE] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==        Row: 95, test1, 目标检测, airport, 2024-06-05 2024-06-06, 3, 26,29,31,32,33,30,28,34, null
+2024-06-25 10:24:14.540 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.selectById ] <==      Total: 1
+2024-06-25 10:24:14.540 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==>  Preparing: UPDATE task SET mark_id=? WHERE task_id=?
+2024-06-25 10:24:14.540 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] ==> Parameters: 26,29,31,32,33,30,28,34,35(String), 95(Integer)
+2024-06-25 10:24:14.540 [DEBUG] [http-nio-1290-exec-3] [c.e.l.m.TaskMapper.updateTask ] <==    Updates: 1
